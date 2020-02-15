@@ -1,25 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import logo from  './imagens/índice.jpeg';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <>
+    <div class="ui menu purple inverted fixed curvatura">
+    <a class="item">Cadastre-se</a>
+    <a class="item">Login</a>
+    <a class="item">Upcoming Events</a>
+  </div>
+
+
+<div class="ui internally celled grid">
+  <div class="row">
+    <div class="three wide column"><img src={logo}/></div>
+    <div class="ten wide column">
+      <div id = "Titulo">
+    <h1>Bem vindo ao TaskGame!</h1>
+    <p>O task task é um aplicativo de todo para organizar os seus afazeres e deixar a sua vida na empresa mais divertida!
+
+    </p>
     </div>
+    </div>
+    <div class="three wide column"><img src={logo} /></div>
+  </div>
+
+</div>
+
+  </>
+
   );
 }
 
