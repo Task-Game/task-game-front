@@ -1,13 +1,16 @@
 #menu-items{
     display: flex;
-    flex-direction: row;
     align-items: center;
     margin:0 auto;
     text-align: center;
     width:auto;
-    
-    
+    position: relative;
 
+}
 
+#shield{
+    padding-top: 30px;   
+    margin-left: 145px;
+    position: absolute;
 
 }
