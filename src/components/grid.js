@@ -7,24 +7,24 @@ import '../css/grid.css'
 
 
 const GridExampleCelledInternally = () => (
-  <div id ="grid">
+  
   <Grid celled='internally'>
     <Grid.Row>
-      <Grid.Column width={5}>
+      <Grid.Column width={4}>
         <Image src={cansado} />
       </Grid.Column>
-      <Grid.Column width={6}>
+      <Grid.Column width={8}>
         <div id="texto">
         <h1>Bem vindo ao TaskGame</h1>
         <p>{texto}</p>
         </div>
       </Grid.Column>
-      <Grid.Column width={5}>
+      <Grid.Column width={4}>
         <Image src={heroi} />
       </Grid.Column>
     </Grid.Row>
   </Grid>
-  </div>
+  
 )
 
 export default GridExampleCelledInternally

@@ -10,14 +10,11 @@ import Cadastro from './cadastro';
 export default class MenuExampleBasic extends Component {
     state = {}
 
-    handleItemClick = (e, { name }) => this.setState({ activeItem: name })
-
     render() {
-        const { activeItem } = this.state
 
         return (
             <Menu inverted color='violet' >
-                
+                <div id = 'menu-items'>
                 <Menu.Item>
                     <Cadastro />
                  </Menu.Item>
@@ -29,6 +26,7 @@ export default class MenuExampleBasic extends Component {
                 <Menu.Item>
                     <Login />
                 </Menu.Item>
+                </div>
             </Menu>
         )
     }
