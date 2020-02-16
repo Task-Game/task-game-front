@@ -1,0 +1,13 @@
+#texto{
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+#texto p{
+    font-size: medium;
+}
+
+#grid {
+    margin-top: 50px;
+
+}
