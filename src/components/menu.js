@@ -13,7 +13,7 @@ export default class MenuExampleBasic extends Component {
     render() {
 
         return (
-            <Menu inverted color='violet' >
+            <Menu inverted color='violet' size="large" >
                 <div id = 'menu-items'>
 
 
