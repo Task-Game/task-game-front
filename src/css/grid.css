@@ -8,8 +8,10 @@
 }
 
 #grid {
-    
+    background: #6bb8fa;
     margin-top: 80px;
+    border-radius: 20px;
+    margin: 3%
 }
 
 #upgrid{
