@@ -1,28 +1,25 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-import Menu from './components/menu';
-import Grid from './components/grid';
-import UpGrid from './components/upgrid';
-import Footer from './components/footer';
+import Menu from './LoginComponents/menu';
+import Grid from './LoginComponents/grid';
+import UpGrid from './LoginComponents/upgrid';
+import About from './LoginComponents/About';
+import Footer from './LoginComponents/footer';
 
 import './css/mainPage.css';
 
-function App() {
+class App extends Component {
+  render(){
   return (
     <>
     <Menu />
     <Grid />
     <UpGrid />
-    <div class="ui message violet" id="container">
-  <div class="header">  Mais sobre o TaskGame</div>
-  <p>
-    Coisas legais sobre o TaskGame
-  </p>
-</div>
+    <About />
     <Footer />
     </>
-
-  );
+  )
+  };
 }
 
 export default App;
