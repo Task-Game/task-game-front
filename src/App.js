@@ -1,25 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+import Menu from './components/menu';
+import Grid from './components/grid';
+import UpGrid from './components/upgrid';
+import Footer from './components/footer';
+
+import './css/mainPage.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Menu />
+    <Grid />
+    <UpGrid />
+    <div class="ui message violet" id="container">
+  <div class="header">  Mais sobre o TaskGame</div>
+  <p>
+    Coisas legais sobre o TaskGame
+  </p>
+</div>
+    <Footer />
+    </>
+
   );
 }
 

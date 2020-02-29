@@ -1,0 +1,21 @@
+#menu-items{
+    display: flex;
+    align-items: center;
+    margin:0 auto;
+    text-align: center;
+    width:auto;
+    position: relative;
+
+}
+
+#shield{
+    padding-top: 30px;   
+    margin-left: 161px;
+    position: absolute;
+
+}
+
+#copyright{
+    font-family: 'Roboto', sans-serif;
+    
+}
