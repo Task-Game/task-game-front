@@ -1,25 +1,10 @@
 import React, { Component } from 'react';
 
-import Menu from './LoginComponents/menu';
-import Grid from './LoginComponents/grid';
-import UpGrid from './LoginComponents/upgrid';
-import About from './LoginComponents/About';
-import Footer from './LoginComponents/footer';
+import Routes from './routes/routes';
 
 import './css/mainPage.css';
-
-class App extends Component {
-  render(){
-  return (
-    <>
-    <Menu />
-    <Grid />
-    <UpGrid />
-    <About />
-    <Footer />
-    </>
-  )
-  };
-}
+const App = () => (
+  <Routes />
+)
 
 export default App;

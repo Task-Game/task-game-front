@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button, Header, Image, Modal } from 'semantic-ui-react';
 import image from  '../imagens/login-image.jpg';
+import { Link } from 'react-router-dom'
 
 
 const ModalModalExample = () => (
@@ -24,7 +25,11 @@ const ModalModalExample = () => (
         <i aria-hidden="true" class="shield alternate icon"></i>
         </div>
 
-        <Button color='teal' fluid >Fazer Login</Button>
+        <Button color='teal' fluid>
+          <Link to="/TaskGame" style = {{color:'#fff' }} >      
+          Fazer Login
+          </Link>
+          </Button>
 
       </Modal.Description>
     </Modal.Content>
