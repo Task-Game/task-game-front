@@ -1,22 +1,12 @@
 import React, { Component } from 'react';
 
-import Menu from './LoginComponents/menu';
-import Grid from './LoginComponents/grid';
-import UpGrid from './LoginComponents/upgrid';
-import About from './LoginComponents/About';
-import Footer from './LoginComponents/footer';
-
-import './css/mainPage.css';
+import Menu from './Components/menu';
 
 class App extends Component {
   render(){
   return (
     <>
-    <Menu />
-    <Grid />
-    <UpGrid />
-    <About />
-    <Footer />
+    <h1>Se divirta!</h1>
     </>
   )
   };
