@@ -1,0 +1,41 @@
+#menuPrincipal{
+margin-bottom: 20px;
+
+}
+
+#menuLateral{
+    position: relative;
+    margin-right: 3%;
+}
+#bemVindo{
+    text-decoration-color: black;
+    font-family: 'Roboto', sans-serif;
+    font-size: large;
+    margin-top: 6px;
+}
+#nomeDoUsuario{
+    text-align:inherit ;
+    text-decoration-color: black;
+    font-family: 'Roboto', sans-serif;
+
+}
+#tarefa{
+    color: black;
+    margin: 10px;
+    
+}
+    #escudo{
+    text-align: right;
+    position: absolute;
+    }
+
+    #fotoDoProjeto{
+        margin-bottom:20px;
+        
+    }
+    #pesquisa{
+        margin-left: 37px;
+    }
+    #card{
+        margin-left: 37;
+    }
