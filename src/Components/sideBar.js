@@ -7,7 +7,7 @@ const SidebarExampleSidebar = () => {
 
   return (
     <Sidebar.Pushable as={Segment}>
-      <Sidebar  compact inverted color='violet' size='large'
+      <Sidebar   inverted color='violet' size='large'
         as={Menu}
         animation='slide out'
         icon='bars'

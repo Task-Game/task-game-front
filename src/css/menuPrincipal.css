@@ -1,5 +1,7 @@
 #menuPrincipal{
-margin-bottom: 20px;
+
+
+
 
 }
 
@@ -13,20 +15,22 @@ margin-bottom: 20px;
     font-size: large;
     margin-top: 6px;
 }
+#tarefa{
+    color: black;
+    margin-left: 80px;
+    
+}
 #nomeDoUsuario{
     text-align:inherit ;
     text-decoration-color: black;
     font-family: 'Roboto', sans-serif;
 
 }
-#tarefa{
-    color: black;
-    margin: 10px;
-    
-}
-    #escudo{
-    text-align: right;
+
+    #shield{
+    align-items: left;
     position: absolute;
+    margin-left:90% ;
     }
 
     #fotoDoProjeto{
