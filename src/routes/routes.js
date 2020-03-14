@@ -5,6 +5,9 @@ import TaskGame from '../taskGamePage';
 
 import { User } from './api'
 
+/*Login route verifica se as credencias estão certas ou não, e 
+passa as props para o usuario caso tudo esteja ok */
+
 const LoginRoute = ({ component: Component, ...rest }) => (
     <Route
         {...rest}
@@ -19,6 +22,7 @@ const LoginRoute = ({ component: Component, ...rest }) => (
             />
 );
 
+//As rotas do site
 const routes = () => (
     <BrowserRouter>
         <Switch>

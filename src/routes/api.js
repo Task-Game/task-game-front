@@ -1,4 +1,5 @@
-//Isso é um backend improvidado, para testar o sistema de login
+//Conexão com o back end, utilizar comandos do axios para fazer as chamadas da api
+
 
 import axios from 'axios';
 

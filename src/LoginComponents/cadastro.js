@@ -18,6 +18,7 @@ class CadastroModal extends Component{
       
     };
   }
+  /*Função que pega os imputs do usuario e manda para o banco(falta a chamada da api)*/
 
   handleSignUp = e =>{
     e.preventDefault();
