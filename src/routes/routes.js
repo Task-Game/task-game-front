@@ -3,7 +3,7 @@ import  { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import MainPage from '../mainPage';
 import TaskGame from '../taskGamePage';
 
-import { User } from '../auth'
+import { User } from './api'
 
 const LoginRoute = ({ component: Component, ...rest }) => (
     <Route
@@ -24,6 +24,7 @@ const routes = () => (
         <Switch>
             <Route exact path="/" component={MainPage} ></Route>
             <LoginRoute path="/TaskGame" component={TaskGame} />
+            <Route path="*" component={() => <h1>Tem parada errada ai irmão</h1>} />
         </Switch>
     </BrowserRouter>
 )

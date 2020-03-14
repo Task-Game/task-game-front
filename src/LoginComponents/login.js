@@ -24,12 +24,13 @@ const ModalModalExample = () => (
          <input type="text" placeholder="Não deixe ninguem ver" />
         <i aria-hidden="true" class="shield alternate icon"></i>
         </div>
-
+        <Link to = "/TaskGame" style = {{color:'#fff' }} > 
         <Button color='teal' fluid>
-          <Link to="/TaskGame" style = {{color:'#fff' }} >      
+         
           Fazer Login
-          </Link>
+          
           </Button>
+        </Link>
 
       </Modal.Description>
     </Modal.Content>

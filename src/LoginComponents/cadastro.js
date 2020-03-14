@@ -1,10 +1,42 @@
-import React from 'react'
-import { Button, Header, Image, Modal } from 'semantic-ui-react';
+import React, { Component } from 'react';
+import { Button, Header, Image, Modal, Form } from 'semantic-ui-react';
 import image from  '../imagens/cadastro-image.jpg';
+import { Link } from 'react-router-dom';
+
+class CadastroModal extends Component{
 
 
-const ModalModalExample = () => (
+  constructor() {
+    super();
+    this.state = {
+      "novoUsuario": 
+        {
+          "nome": "",
+          "email": "",
+          "senha": "",          
+        }
+      
+    };
+  }
+
+  handleSignUp = e =>{
+    e.preventDefault();
+    const { nome, email, senha } = this.state
+    if (!nome || !email || !senha) {
+      alert("Deu ruim");
+    }
+
+    else{alert("Ta dando certo")
+    console.log(this.state)
+  }};
+
+
+
+  render(){
+    return(
+
   <Modal trigger={<Button inverted circular>Cadastre-se!</Button>}>
+
     <Modal.Header>Esta pronto para essa aventura?</Modal.Header>
     <Modal.Content image>
       <Image wrapped size='medium' src={image} />
@@ -12,29 +44,51 @@ const ModalModalExample = () => (
 
         <Header>Insira seus melhores dados!</Header>
 
-        <p>Nome</p>
-        <div class="ui icon input">
-         <input type="text" placeholder="Insira seu nome" />
-        <i aria-hidden="true" class="user icon"></i>
-        </div>
 
-        <p>Email</p>
-        <div class="ui icon input">
-         <input type="text" placeholder="Insira seu email" />
-        <i aria-hidden="true" class="address card icon"></i>
-        </div>
+        <Form onSubmit={this.handleSignUp}>
 
-        <p>Senha</p>
-        <div class="ui icon input">
-         <input type="text" placeholder="Não deixe ninguem ver" />
-        <i aria-hidden="true" class="shield alternate icon"></i>
-        </div>
+    <Form.Field>
+      <label>Insira seu nome</label>
+      <input placeholder='TaskGame' 
+      onChange={e => this.setState({ nome: e.target.value })}/>
+      
+    </Form.Field>
+
+    <Form.Field>
+      <label>Insira seu Email!</label>
+      <input placeholder='tcctaskgame@gmail.com'
+      onChange={e => this.setState({ email: e.target.value })} />
+      
+
+    </Form.Field>
+
+    <Form.Field>
+      <label>Insira uma senha!</label>
+      <input placeholder='Its_s3cret!!' 
+       onChange={e => this.setState({ senha: e.target.value })}/>
+     
+
+    </Form.Field>
+      
+    <Button color='teal'
+     fluid type='submit'         
+     >
+       Bora!</Button>
+    </Form>
+
         
-        <Button color='teal' fluid>Cadastrar</Button>
+       
         
       </Modal.Description>
     </Modal.Content>
   </Modal>
-)
+  
+    )
+  }
+}
 
-export default ModalModalExample
+export default CadastroModal;
+
+
+
+
