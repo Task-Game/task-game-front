@@ -3,7 +3,7 @@ import  { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import MainPage from '../mainPage';
 import TaskGame from '../taskGamePage';
 
-import { User } from './api'
+import { User } from './auth'
 
 /*Login route verifica se as credencias estão certas ou não, e 
 passa as props para o usuario caso tudo esteja ok */

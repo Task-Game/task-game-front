@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Button, Header, Image, Modal, Form } from 'semantic-ui-react';
 import image from  '../imagens/cadastro-image.jpg';
 import { Link } from 'react-router-dom';
+import api from '../routes/api'
 
 class CadastroModal extends Component{
 
@@ -9,7 +10,7 @@ class CadastroModal extends Component{
   constructor() {
     super();
     this.state = {
-      "novoUsuario": 
+      "Usuario": 
         {
           "nome": "",
           "email": "",
@@ -20,15 +21,20 @@ class CadastroModal extends Component{
   }
   /*Função que pega os imputs do usuario e manda para o banco(falta a chamada da api)*/
 
-  handleSignUp = e =>{
+  handleSignUp = async e =>{
     e.preventDefault();
     const { nome, email, senha } = this.state
-    if (!nome || !email || !senha) {
+    if (!nome || !email || !senha )  {
       alert("Deu ruim");
-    }
-
-    else{alert("Ta dando certo")
-    console.log(this.state)
+    } else {
+      try{
+    alert("Ta dando certo")
+    await api.post("/api/v1.0/users", { nome, email, senha });
+      }
+      catch (err) {
+        console.log(err);
+        alert("Tem parada errada ai");
+      }
   }};
 
 
@@ -89,6 +95,7 @@ class CadastroModal extends Component{
 }
 
 export default CadastroModal;
+
 
 
 
