@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Menu, Image, Button } from 'semantic-ui-react';
+import { Menu } from 'semantic-ui-react';
 import '../css/menu.css'
 
 
@@ -7,9 +7,7 @@ import '../css/menu.css'
 
 export default class MenuExampleBasic extends Component {
     state = {}
-
     render() {
-
         return (
             <Menu  inverted  >
                 <div id= "menu-items">
