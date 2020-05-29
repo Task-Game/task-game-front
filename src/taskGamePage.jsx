@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-
+import Card from './LoginComponents/card'
 
 export default class TaskGame extends Component {
   render() {
     return(
-        <h1>Ta logado, pode fazer as parada ai</h1>
-
+        <>
+      <Card />
+        </>
     );
   }
 }
