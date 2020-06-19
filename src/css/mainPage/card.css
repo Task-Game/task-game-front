@@ -1,10 +1,11 @@
-body {
+
+.all{
     width: 100vw;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    flex-wrap: wrap;
 }
 
 .card{
@@ -12,7 +13,7 @@ body {
     grid-template-columns:300px;
     grid-template-rows: 210px 210px 80px;
     grid-template-areas: "image" "text" "stats";
-
+    margin: 2%;
     font-family: 'Roboto', sans-serif;
     border-radius: 18px;
     background: white;
@@ -23,7 +24,7 @@ body {
 
 .card-image{
     grid-area: image;
-    background:url("../imagens/todo-image1.png");
+    background:url("../../imagens/todo-image1.png");
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     background-size: cover;
@@ -80,7 +81,7 @@ body {
 }
 
 .card:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6)
 }
 

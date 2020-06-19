@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Menu, Image, Button } from 'semantic-ui-react';
-import '../css/menu.css';
+import '../css/mainPage/menu.css';
 import Login from './login';
 import Cadastro from './cadastro';
 
@@ -13,7 +13,7 @@ export default class MenuExampleBasic extends Component {
     render() {
 
         return (
-            <Menu inverted color='violet' size="large" >
+            <Menu inverted color='violet' size="large" id="menu">
                 <div id = 'menu-items'>
 
 

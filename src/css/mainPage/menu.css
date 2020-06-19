@@ -1,3 +1,4 @@
+
 #menu-items{
     display: flex;
     align-items: center;
@@ -8,14 +9,18 @@
 
 }
 
-#shield{
-    padding-top: 30px;   
-    margin-left: 161px;
+#shieldmenu{
     position: absolute;
-
+    margin-left: 90%;
+    
 }
 
+
+
 #copyright{
-    font-family: 'Roboto', sans-serif;
-    
+    font-family: 'Roboto', sans-serif;  
+}
+
+#menu{
+    margin-top: 10px;
 }

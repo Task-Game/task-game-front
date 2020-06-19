@@ -1,0 +1,122 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    background:#F0F0F5;
+}
+
+*{
+    margin:0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+#bemVindo{
+    color: white;
+    font-size: large;
+    margin-top: 6px;
+    margin-left: 100px;
+}
+
+#nomeDoUsuario{
+    text-align:inherit;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+
+.sidebar{
+    position: fixed;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background: gray;
+    transition: all .5s ease;
+}
+
+.sidebar header{
+    font-size: 22px;
+    color: white;
+    text-align: center;
+    line-height: 70px;
+    background: #7349ce;
+    user-select: none;
+}
+
+.sidebar ul a{
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 65px;
+    font-size: 20px;
+    color: white;
+    padding-left: 40px;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(255,255,255,.1);
+    border-bottom: 1px solid black;
+    transition: .4s;
+}
+
+ul li:hover a{
+    padding-left: 50px;
+}
+
+.sidebar ul a i{
+    margin-right:16px;
+}
+
+#check{
+    display: none;
+}
+
+#btn, label #cancel{
+    position: absolute;
+    cursor: pointer;
+    background: #6435c9;
+    border-radius: 3px;
+}
+
+ #btn{
+    left:20px;
+    top:20px;
+    font-size: 35px;
+    color: white;
+    padding: 2px 2px;
+    transition: all .5s;
+}
+#btn:hover{
+    background: #140a28;
+}
+
+label #cancel{
+    z-index: 1111;
+    left: -195px;
+    top: 17px;
+    font-size: 30px;
+    color: white;
+    padding: 4px 9px;
+    transition: all .5s ease;
+}
+
+#check:checked ~ .sidebar{
+    left:0px;
+}
+
+#check:checked ~ #btn{
+    left:250px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#check:checked ~ label #cancel{
+    left: 195px;
+}
+
+
+
+
+
+
+
+
+
+
