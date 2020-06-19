@@ -3,7 +3,7 @@ import { Button, Header, Image, Modal, Form } from 'semantic-ui-react';
 import image from  '../imagens/cadastro-image.jpg';
 import { Link } from 'react-router-dom';
 
-class CadastroModal extends Component{
+class Cadastro extends Component{
 
 
   constructor() {
@@ -50,14 +50,14 @@ class CadastroModal extends Component{
 
     <Form.Field>
       <label>Insira seu nome</label>
-      <input placeholder='TaskGame' 
+      <input type="text" placeholder='TaskGame' 
       onChange={e => this.setState({ nome: e.target.value })}/>
       
     </Form.Field>
 
     <Form.Field>
       <label>Insira seu Email!</label>
-      <input placeholder='tcctaskgame@gmail.com'
+      <input type="email" placeholder='tcctaskgame@gmail.com'
       onChange={e => this.setState({ email: e.target.value })} />
       
 
@@ -65,7 +65,7 @@ class CadastroModal extends Component{
 
     <Form.Field>
       <label>Insira uma senha!</label>
-      <input placeholder='Its_s3cret!!' 
+      <input type = "password" placeholder='Its_s3cret!!' 
        onChange={e => this.setState({ senha: e.target.value })}/>
      
 
@@ -88,7 +88,9 @@ class CadastroModal extends Component{
   }
 }
 
-export default CadastroModal;
+
+
+export default Cadastro;
 
 
 

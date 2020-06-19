@@ -2,7 +2,7 @@ import React from 'react'
 import { Grid, Image } from 'semantic-ui-react'
 import cansado from '../imagens/cansado-grid.png';
 import heroi from '../imagens/heroi-grid.png'
-import '../css/grid.css'
+import '../css/loginPage/grid.css';
 
 
 

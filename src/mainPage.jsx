@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import Menu from './LoginComponents/menu';
 import Grid from './LoginComponents/grid';
@@ -6,10 +6,9 @@ import UpGrid from './LoginComponents/upgrid';
 import About from './LoginComponents/About';
 import Footer from './LoginComponents/footer';
 
-import './css/mainPage.css';
 
-class MainPage extends Component {
-  render(){
+
+const MainPage = () => {
   return (
     <>
     <Menu />
@@ -20,6 +19,6 @@ class MainPage extends Component {
     </>
   )
   };
-}
 
-export default MainPage;
+
+export default MainPage; 
