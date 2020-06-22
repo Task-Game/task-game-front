@@ -1,6 +1,6 @@
 # TaskGame
 Aplicação com objetivo de ajudar empresas e pessoas a se organizarem de forma divertida.
-Utilizaremos Flask e react para o desenvolvimento desse projeto
+Utilizaremos Flask e React para o desenvolvimento desse projeto
 [Repositorio para o back-end](https://github.com/Task-Game/task-game-backend) 
 
 Email para contato: [tcctaskgame@gmail.com](tcctaskgame@gmail.com)
@@ -16,10 +16,11 @@ Email para contato: [tcctaskgame@gmail.com](tcctaskgame@gmail.com)
     - src/css (Controle da parte visual do site)
     - src/imagens (imagens usadas)
     - src/LoginComponents (Componentes usados na pagina de entrada)
+    - src/mainPageComponents (Componentes usados na pagina pós login)
     - src/routes (Conexão com a api, autenticações e rotas da DOM)
-- App.js (Gerenciador de rotas da DOM)
-- mainPage.jsx (Pagina de entrada)
-- taskGamePage.jsx(Pagina Principal)
+- App.js (Primeiro componente a ser renderizado, e que começa a aplicação)
+- mainPage.jsx (junção dos componentes da pagina de login)
+- taskGamePage.jsx(unção dos componentes da pagina de principal)
 
 
 
