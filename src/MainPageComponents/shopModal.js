@@ -27,6 +27,7 @@ export default class shopModal extends Component {
 
     else{alert("Ta dando certo");
     console.log(this.state)
+    //post
   }};
 
 

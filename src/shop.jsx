@@ -1,15 +1,21 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import Menu from './MainPageComponents/menu';
 import Card from './MainPageComponents/card';
 import ShopModal from './MainPageComponents/shopModal';
 
-export default class TaskGame extends Component {
+const TaskGame = () => {
+  const [cards, setCards] = useState([])
 
-  render() {
+  useEffect(() => {    
+  //get 
+  },[]);
+
+   
     return(
         <>        
         <Menu />
         <ShopModal />
+        {//cards.map
         <Card 
         date="NOVIDADE!" 
         title="Lista de tarefas" 
@@ -17,7 +23,10 @@ export default class TaskGame extends Component {
         name="João" 
         price="5" 
         rarity="comum"/>
+        }
         </>
     );
-  }
+  
 }
+
+export default TaskGame;

@@ -1,12 +1,19 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import Card from './MainPageComponents/card'
 import Menu from './MainPageComponents/menu';
 
-export default class Tarefas extends Component {
-  render() {
+const Tarefas = () => {
+  const [cards, setCards] = useState([])
+
+  useEffect(() => {    
+  //get 
+  },[]);
+
+
     return(
         <>        
         <Menu />
+        {//cards.map
         <Card 
         date="31/07" 
         title="Tarefa" 
@@ -14,7 +21,9 @@ export default class Tarefas extends Component {
         name="Pedro" 
         price="9" 
         rarity="incomum"/>
+        }
         </>
     );
-  }
+  
 }
+export default Tarefas;

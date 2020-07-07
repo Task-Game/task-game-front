@@ -21,6 +21,7 @@ export default class shopModal extends Component {
     if (!id ) {
       alert("Parece que não tem nenhum grupo com esse codigo, se quiser tente de novo");
       console.log(this.state)
+      //post
     }
 
     else{alert("Ta dando certo");
