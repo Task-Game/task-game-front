@@ -1,36 +1,34 @@
 import React from 'react';
 import '../css/mainPage/card.css';
+import TarefaModal from '../MainPageComponents/tarefaModal';
 
-function Card(props) {
+function GroupCard(props) {
 
     return (
         <>
             <div className="all">
 
             <div className="card">
-                <div className="card-image"></div>
+                <div className="card-imagegroup "></div>
                 <div className="card-text">
                     <span className="date">{props.date}</span>
-                            <h2>{props.title}</h2>
+                         <h2>{props.title}</h2>
                     <p>{props.description}</p>
                 </div>
-                <div className="card-stats">
+                <div className="card-stats" style={{backgroundColor:"#00CED1"}}>
                     <div className="stat">
-                        <div className="valor">{props.price}g</div>
-                        <div className="type">{props.rarity}</div>
+                        <div className="valor">{props.members}</div>
+                        <div className="type">Membros</div>
                     </div>
                     <div className="stat">
-                        <div className="valor">Por</div>
+                        <div className="valor">Líder</div>
                         <div className="type">{props.name}</div>
                     </div>
                     <div className="stat">
-                        <button className="type readybutton">Entregar</button>
+                        <TarefaModal />
                     </div>
                 </div>                
             </div>
-
-
-            
             </div>
         </>
 
@@ -38,4 +36,4 @@ function Card(props) {
 }
 
 
-export default Card;
+export default GroupCard;

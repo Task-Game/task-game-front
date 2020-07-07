@@ -4,6 +4,7 @@ import Card from './MainPageComponents/card';
 import ShopModal from './MainPageComponents/shopModal';
 
 export default class TaskGame extends Component {
+
   render() {
     return(
         <>        

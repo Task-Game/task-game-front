@@ -29,6 +29,13 @@
     border-top-right-radius: 15px;
     background-size: cover;
 }
+.card-imagegroup{
+    grid-area: image;
+    background:url("../../imagens/grupoicon.jpeg");
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-size: cover;
+}
 
 .card-text{
     grid-area:text;
@@ -57,7 +64,7 @@
     grid-template-rows: 1fr;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
-    background-color: rgb(255, 7, 110);
+    background-color: rgb(225, 7, 110);
 }
 
 .card-stats .stat {

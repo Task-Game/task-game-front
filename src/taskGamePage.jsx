@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Card from './MainPageComponents/card'
 import Menu from './MainPageComponents/menu';
 
-export default class TaskGame extends Component {
+export default class Tarefas extends Component {
   render() {
     return(
         <>        

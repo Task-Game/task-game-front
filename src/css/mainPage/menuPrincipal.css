@@ -1,6 +1,6 @@
 body{
     font-family: 'Roboto', sans-serif;
-    background:#F0F0F5;
+    background:#282a36;
 }
 
 *{
@@ -19,7 +19,6 @@ body{
 
 #nomeDoUsuario{
     text-align:inherit;
-    font-family: 'Roboto', sans-serif;
 
 }
 
@@ -111,6 +110,32 @@ label #cancel{
     left: 195px;
 }
 
+.no-group{
+    width: 100vw;
+    height: 100vh;
+    text-align: center;    
+    color:white;
+    margin-top: 35vh;
+
+}
+
+.no-group input{
+    width: 20%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+    transition: .5s;
+}
+
+.no-group input:focus{
+    outline: none;
+    transform: scale(1.1);
+}
+
+.hide{
+    display: none;
+}
 
 
 

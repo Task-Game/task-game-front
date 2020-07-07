@@ -7,4 +7,4 @@ const api = axios.create({
     baseURL: 'http://',
   });
 
-export const User = () => true;
+export default api
