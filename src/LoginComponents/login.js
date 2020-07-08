@@ -1,10 +1,16 @@
-import React from 'react'
+import React,{ useState } from 'react'
 import { Button, Header, Image, Modal } from 'semantic-ui-react';
 import image from  '../imagens/login-image.jpg';
 import { Link } from 'react-router-dom';
 
+function initialState(){
+  return{ nome: "", senha: ""}
+}
 
-const ModalModalExample = () => (
+const LoginModal = () => {
+  const [values, setValues] = useState(initialState);
+
+
   <Modal trigger={<Button inverted circular>Login</Button>}>
     <Modal.Header>Bem vindo de volta! Ou sera que não?</Modal.Header>
     <Modal.Content image>
@@ -35,6 +41,6 @@ const ModalModalExample = () => (
       </Modal.Description>
     </Modal.Content>
   </Modal>
-)
+}
 
-export default ModalModalExample
+export default LoginModal
