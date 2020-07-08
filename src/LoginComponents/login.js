@@ -24,7 +24,7 @@ const ModalModalExample = () => (
          <input type="password" placeholder="Não deixe ninguem ver" />
         <i aria-hidden="true" class="shield alternate icon"></i>
         </div>
-        <Link to = "/TaskGame" style = {{color:'#fff' }} > 
+        <Link to = "/tarefas" style = {{color:'#fff' }} > 
         <Button color='teal' fluid>
          
           Logar!

@@ -1,17 +1,15 @@
 import React,{ Component } from 'react';
 import { Button, Header, Image, Modal, Form } from 'semantic-ui-react';
-import SalesmanImage from '../imagens/salesman.jpg';
+import GuildImage from '../imagens/guildman.jpg';
 
 export default class shopModal extends Component {
   constructor() {
     super();
     this.state = {
-      "novoItem": 
+      "novoGrupo": 
         {
           "nome": "",
           "descricao": "",
-          "valor": "", 
-          "raridade":"",
         }
       
     };
@@ -19,8 +17,8 @@ export default class shopModal extends Component {
 
   handleSignUp = e =>{
     e.preventDefault();
-    const { nome, descricao, valor, raridade} = this.state
-    if (!nome || !descricao || !valor || !raridade ) {
+    const { nome, descricao} = this.state
+    if (!nome || !descricao ) {
       alert("Deu ruim");
       console.log(this.state)
     }
@@ -34,51 +32,32 @@ export default class shopModal extends Component {
   render(){
     return(
 
-      <Modal trigger={<Button inverted circular>Novo Item!</Button>}>
+      <Modal trigger={<Button inverted circular>Novo grupo</Button>}>
 
-    <Modal.Header>Vem sempre aqui?</Modal.Header>
+    <Modal.Header>Hm, você é novo por aqui</Modal.Header>
     <Modal.Content image>
-      <Image wrapped size='medium' src={SalesmanImage} />
+      <Image wrapped size='medium' src={GuildImage} />
       <Modal.Description>
-
-        <Header>Coloque um item a venda!</Header>
-
+        <Header>Qual é o nome do grupo, projeto ou empresa?</Header>
 
         <Form onSubmit={this.handleSignUp}>
 
     <Form.Field>
       <label>Qual o nome do item</label>
-      <input type="text" placeholder='Caderninho' 
+      <input type="text" placeholder='TaskGame' 
       onChange={e => this.setState({ nome: e.target.value })}/>   
     </Form.Field>
 
     <Form.Field>
       <label>Descrição</label>
-      <input type="text" placeholder='É bonito'
+      <input type="text" placeholder='The best group in the world!!'
       onChange={e => this.setState({ descricao: e.target.value })} />
-    </Form.Field>
-
-    <Form.Field>
-      <label>Quanto ele vale</label>
-      <input type="text" placeholder='200' 
-      onChange={e => this.setState({ valor: e.target.value })}/>
-      
-    </Form.Field>
-
-
-    
-    <Form.Field>
-      <label>E sua raridade</label>
-      <input type = "text" placeholder='Lendario!!' 
-       onChange={e => this.setState({ raridade: e.target.value })}/>
-     
-
     </Form.Field>
       
     <Button color='teal'
      fluid type='submit'         
      >
-       Bora!
+       Criar!
        </Button>
     </Form>
 
@@ -92,4 +71,3 @@ export default class shopModal extends Component {
     )
   }
 }
-

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Button, Header, Image, Modal, Form } from 'semantic-ui-react';
 import image from  '../imagens/cadastro-image.jpg';
-import { Link } from 'react-router-dom';
+import api from '../routes/api';
+import axios from 'axios';
 
 class Cadastro extends Component{
 
@@ -13,7 +14,9 @@ class Cadastro extends Component{
         {
           "nome": "",
           "email": "",
-          "senha": "",          
+          "senha": "", 
+          "empresa":"",
+          "dataNascimento": "",
         }
       
     };
@@ -22,13 +25,14 @@ class Cadastro extends Component{
 
   handleSignUp = e =>{
     e.preventDefault();
-    const { nome, email, senha } = this.state
-    if (!nome || !email || !senha) {
+    const { nome, email, empresa, dataNascimento, senha } = this.state
+    if (!nome || !email || !senha || !dataNascimento || !empresa) {
       alert("Deu ruim");
     }
 
-    else{alert("Ta dando certo")
-    console.log(this.state)
+    else{alert("Ta dando certo");
+    console.log(this.state);
+    api.post('login', this.state)
   }};
 
 
@@ -64,6 +68,21 @@ class Cadastro extends Component{
     </Form.Field>
 
     <Form.Field>
+      <label>Qual empresa você trabalha</label>
+      <input type="text" placeholder='TaskGame Etecia' 
+      onChange={e => this.setState({ empresa: e.target.value })}/>
+      
+    </Form.Field>
+
+    <Form.Field>
+      <label>Data de Nascimento</label>
+      <input type="date" placeholder='00/00/0000' 
+      onChange={e => this.setState({ dataNascimento: e.target.value })}/>
+      
+    </Form.Field>
+
+    
+    <Form.Field>
       <label>Insira uma senha!</label>
       <input type = "password" placeholder='Its_s3cret!!' 
        onChange={e => this.setState({ senha: e.target.value })}/>
@@ -74,7 +93,8 @@ class Cadastro extends Component{
     <Button color='teal'
      fluid type='submit'         
      >
-       Bora!</Button>
+       Bora!
+       </Button>
     </Form>
 
         

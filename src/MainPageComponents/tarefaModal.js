@@ -1,6 +1,6 @@
 import React,{ Component } from 'react';
 import { Button, Header, Image, Modal, Form } from 'semantic-ui-react';
-import SalesmanImage from '../imagens/salesman.jpg';
+import tarefagirl from '../imagens/criartarefa.jpg';
 
 export default class shopModal extends Component {
   constructor() {
@@ -12,6 +12,7 @@ export default class shopModal extends Component {
           "descricao": "",
           "valor": "", 
           "raridade":"",
+          "prazo":"",
         }
       
     };
@@ -19,42 +20,41 @@ export default class shopModal extends Component {
 
   handleSignUp = e =>{
     e.preventDefault();
-    const { nome, descricao, valor, raridade} = this.state
-    if (!nome || !descricao || !valor || !raridade ) {
+    const { nome, descricao, valor, raridade, prazo} = this.state
+    if (!nome || !descricao || !valor || !raridade || !prazo ) {
       alert("Deu ruim");
       console.log(this.state)
     }
 
     else{alert("Ta dando certo");
     console.log(this.state)
-    //post
   }};
 
 
   render(){
     return(
 
-      <Modal trigger={<Button inverted circular>Novo Item!</Button>}>
+      <Modal trigger={<Button  color='blue' circular>Nova Tarefa!</Button>}>
 
-    <Modal.Header>Vem sempre aqui?</Modal.Header>
+    <Modal.Header>Criar Tarefas</Modal.Header>
     <Modal.Content image>
-      <Image wrapped size='medium' src={SalesmanImage} />
+      <Image wrapped size='medium' src={tarefagirl} />
       <Modal.Description>
 
-        <Header>Coloque um item a venda!</Header>
+        <Header>Uma tarefa? Espero que não pegue tão leve</Header>
 
 
         <Form onSubmit={this.handleSignUp}>
 
     <Form.Field>
-      <label>Qual o nome do item</label>
-      <input type="text" placeholder='Caderninho' 
+      <label>Titulo</label>
+      <input type="text" placeholder='Envelopes' 
       onChange={e => this.setState({ nome: e.target.value })}/>   
     </Form.Field>
 
     <Form.Field>
       <label>Descrição</label>
-      <input type="text" placeholder='É bonito'
+      <input type="text" placeholder='Entregar os envelopes na diretoria'
       onChange={e => this.setState({ descricao: e.target.value })} />
     </Form.Field>
 
@@ -73,6 +73,13 @@ export default class shopModal extends Component {
        onChange={e => this.setState({ raridade: e.target.value })}/>
      
 
+    </Form.Field>
+
+    <Form.Field>
+      <label>Até quando pode ser feito?</label>
+      <input type="date" placeholder='00/00/0000' 
+      onChange={e => this.setState({ prazo: e.target.value })}/>
+      
     </Form.Field>
       
     <Button color='teal'
