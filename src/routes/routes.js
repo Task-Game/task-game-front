@@ -17,7 +17,7 @@ const LoginRoute = ({ component: Component, ...rest }) => (
         {...rest}
         render={props => 
             User() ? (
-            <Component {...props} />
+            <Component  />
                 ) : (
                     <Redirect to={{ pathname: "/", state: { from: props.location} }} />
                 ) 
@@ -31,11 +31,11 @@ const routes = () => (
     <BrowserRouter>
         <Switch>
             <Route exact path="/" component={MainPage} ></Route>
-            <Route exact path="/Grupos" component={Groups}></Route>
-            <Route exact path="/Loja" component={Shop} ></Route>
-            <Route exact path="/Perfil" component={Profile} ></Route>
-            <Route exact path="/Sobre" component={About} ></Route>
-            <LoginRoute path="/TaskGame" component={TaskGame} />
+            <LoginRoute exact path="/grupos" component={Groups}></LoginRoute>
+            <LoginRoute exact path="/loja" component={Shop} ></LoginRoute>
+            <LoginRoute exact path="/perfil" component={Profile} ></LoginRoute>
+            <LoginRoute exact path="/sobre" component={About} ></LoginRoute>
+            <LoginRoute path="/tarefas" component={TaskGame} />
             <Route path="*" component={() => <h1>Algo deu errado, tente novamente</h1>} />
         </Switch>
     </BrowserRouter>

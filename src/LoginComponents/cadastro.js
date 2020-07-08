@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Header, Image, Modal, Form } from 'semantic-ui-react';
 import image from  '../imagens/cadastro-image.jpg';
-import { Link } from 'react-router-dom';
 import api from '../routes/api';
 import axios from 'axios';
 

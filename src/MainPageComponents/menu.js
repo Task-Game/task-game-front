@@ -23,11 +23,11 @@ class menu extends Component {
             <div className="sidebar">
         <header>Menu</header>
             <ul>
-                <li><Link to="/TaskGame" style={{background:"#998AD3"}}><FaClipboard /> Tarefa</Link></li>
-                <li><Link to="/Grupos" style={{background:"#E494D3"}}><FaUsers /> Grupos</Link></li>
-                <li><Link to="/Loja" style={{background:"#CDF1AF"}}><FaStoreAlt /> Loja</Link></li>
-                <li><Link to="/Perfil" style={{background:"#87DCC0"}}><FaUserAlt /> Perfil</Link></li>
-                <li><Link to="/Sobre" style={{background:"#88BBE4"}}><FaDiceD6 />  Sobre</Link></li>
+                <li><Link to="/tarefas" style={{background:"#998AD3"}}><FaClipboard /> Tarefa</Link></li>
+                <li><Link to="/grupos" style={{background:"#E494D3"}}><FaUsers /> Grupos</Link></li>
+                <li><Link to="/loja" style={{background:"#CDF1AF"}}><FaStoreAlt /> Loja</Link></li>
+                <li><Link to="/perfil" style={{background:"#87DCC0"}}><FaUserAlt /> Perfil</Link></li>
+                <li><Link to="/sobre" style={{background:"#88BBE4"}}><FaDiceD6 />  Sobre</Link></li>
                 <li><Link to="/" style={{background:"#C7CEEA"}}><FaAngleDoubleLeft /> Sair</Link></li>
                 
             </ul>
