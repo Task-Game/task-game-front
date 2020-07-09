@@ -30,25 +30,22 @@ function onChange(event){
         <>
         <Menu />
         
-        <Form onSubmit={onSubmit}>
+        <form onSubmit={onSubmit}>
         <div className="no-group">
-            <Form.Field>
             <p>Digite o codigo de confirmação aqui em baixo</p>
-
             <input 
             type="text" 
             placeholder="Digite o codigo aqui" 
             name="code" 
             onChange={onChange} 
-         >
+                 >
                 </input>   
-            </Form.Field> 
-  
+                <br/>
                 <Button>Confirmar!</Button>
 
         </div>
+        </form>
 
-        </Form>
     
         </>   
      );
