@@ -18,7 +18,7 @@ class menu extends Component {
   render() {
     return (
       <>
-        <Menu borderless inverted color="violet" size="tiny">
+        <Menu   borderless style={{background:"#AF9BCC"}} size="tiny" > 
           <input type="checkbox" id="check" />
           <label htmlFor="check">
             <i id="cancel">

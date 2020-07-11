@@ -9,7 +9,7 @@ export default class MenuExampleBasic extends Component {
 
   render() {
     return (
-      <Menu inverted color="violet" size="large" id="menu">
+      <Menu style={{background:"#AF9BCC"}} size="large" id="menu">
         <div id="menu-items">
           <Menu.Item>
             <Cadastro />
