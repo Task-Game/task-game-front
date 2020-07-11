@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Button, Header, Image, Modal, Form } from "semantic-ui-react";
 import image from "../imagens/cadastro-image.jpg";
 import api from "../routes/api";
-import axios from "axios";
 
 class Cadastro extends Component {
   //cria o estado do componente, ou sua variaveis que serão funcionais 
@@ -14,7 +13,6 @@ class Cadastro extends Component {
         email: "",
         senha: "",
         empresa: "",
-        dataNascimento: "",
       },
     };
   }
@@ -72,17 +70,6 @@ class Cadastro extends Component {
                   type="text"
                   placeholder="TaskGame Etecia"
                   onChange={(e) => this.setState({ empresa: e.target.value })}
-                />
-              </Form.Field>
-
-              <Form.Field>
-                <label>Data de Nascimento</label>
-                <input
-                  type="date"
-                  placeholder="00/00/0000"
-                  onChange={(e) =>
-                    this.setState({ dataNascimento: e.target.value })
-                  }
                 />
               </Form.Field>
 

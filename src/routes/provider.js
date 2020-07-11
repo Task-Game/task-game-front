@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Context from './auth';
+import useStorage from './useStorage';
 
 
 const StoreProvider = ({children}) => {
-    const [token, setToken] = useState('token')
+    const [token, setToken] = useStorage('token')
     return(
         <Context.Provider
             value={{token,
