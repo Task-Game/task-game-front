@@ -43,7 +43,7 @@
 }
 
 .card-text .date{
-    color: rgb(255, 7, 110);
+    color: #E3A1D3;
     font-size:13px;
 }
 
@@ -64,7 +64,7 @@
     grid-template-rows: 1fr;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
-    background-color: rgb(225, 7, 110);
+    background-color: #E3A1D3;
 }
 
 .card-stats .stat {
