@@ -4,7 +4,7 @@ import { Grid, Image } from "semantic-ui-react";
 import image1 from "../imagens/todo-image1.png";
 import image2 from "../imagens/todo-image2.png";
 import image3 from "../imagens/todo-image3.png";
-import "../css/mainPage/grid.css";
+import "../css/loginPage/grid.css";
 
 const GridExampleColumnCount = () => (
   <div id="upgrid">

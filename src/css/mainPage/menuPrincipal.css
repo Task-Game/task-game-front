@@ -37,7 +37,7 @@ body{
     color: white;
     text-align: center;
     line-height: 70px;
-    background: #AF9BCC;
+    background: #9d8bb7;
     user-select: none;
 }
 
@@ -70,9 +70,11 @@ ul li:hover a{
 #btn, label #cancel{
     position: absolute;
     cursor: pointer;
-    background: #AF9BCC;
+    background: #9d8bb7;
     border-radius: 3px;
 }
+
+
 
  #btn{
     left:20px;

@@ -3,6 +3,7 @@ import Menu from "./MainPageComponents/menu";
 import Card from "./MainPageComponents/card";
 import ShopModal from "./MainPageComponents/shopModal";
 
+
 const TaskGame = () => {
   const [cards, setCards] = useState([]);
 
@@ -16,14 +17,16 @@ const TaskGame = () => {
       <ShopModal />
       {
         //cards.map
+        <div className="all">
         <Card
           date="NOVIDADE!"
           title="Lista de tarefas"
           description="Uma simples lista de tarefa"
-          name="João"
+          name="Nathalia"
           price="5"
           rarity="comum"
         />
+        </div>
       }
     </>
   );

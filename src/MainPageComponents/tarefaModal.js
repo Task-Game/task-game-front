@@ -79,11 +79,15 @@ export default class shopModal extends Component {
 
               <Form.Field>
                 <label>E sua raridade</label>
-                <input
-                  type="text"
-                  placeholder="Lendario!!"
-                  onChange={(e) => this.setState({ raridade: e.target.value })}
-                />
+                <select onChange={(e) => this.setState({ raridade: e.target.value })}>
+                <option value ="">Selecione a raridade!</option>
+                  <option value ="comum">Comum</option>
+                  <option value ="incomum">Incomum</option>
+                  <option value ="raro">Raro</option>
+                  <option value ="epico">Épico</option>
+                  <option value ="lendario">Lendario!!</option>
+                  
+                </select>
               </Form.Field>
 
               <Form.Field>
