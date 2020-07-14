@@ -24,7 +24,7 @@ export default class MenuExampleBasic extends Component {
           </Menu.Item>
 
           <div id="shield">
-            {/* isso não é um menu-item, e foi construido na base da gambiarra*/}
+      
             <Image src="https://img.icons8.com/dusk/100/000000/shield.png" />
           </div>
         </div>

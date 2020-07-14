@@ -54,7 +54,7 @@ export default class shopModal extends Component {
               </Form.Field>
 
               <Button color="teal" fluid type="submit">
-                Criar!
+                Procurar!
               </Button>
             </Form>
           </Modal.Description>

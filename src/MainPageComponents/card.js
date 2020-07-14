@@ -1,6 +1,6 @@
 import React from "react";
 import "../css/mainPage/card.css";
-
+import { Button} from "semantic-ui-react";
 
 const Card = (props) => {
   //função chamada ao concluir a tarefa
@@ -9,17 +9,26 @@ const Card = (props) => {
     //delete tarefa
     alert("Meus parabens! foi adicionado " + props.price + "g a sua conta");
   }
+  function comprarItem() {
+    //post perfilprice = perfilprice -  price
+    //delete tarefa
+    alert(`Meus parabens! foi adicionado "` + props.title + `" a sua conta`);
+  }
 
-  function cardImage(backgroundImages){
-    return({
-    gridArea: "image",
-    backgroundImage: "url(" +  backgroundImages  + ")",
-    borderTopLeftRadius: "15px",
-    borderTopRightRadius: "15px",
-    backgroundSize: "cover",
-    }
-    )
-  };
+  function cardType(cardType) {
+    if (cardType == "tarefa") return concluirTarefa();
+    else if (cardType == "shop") return comprarItem();
+  }
+
+  function cardImage(backgroundImages) {
+    return {
+      gridArea: "image",
+      backgroundImage: "url(" + backgroundImages + ")",
+      borderTopLeftRadius: "15px",
+      borderTopRightRadius: "15px",
+      backgroundSize: "cover",
+    };
+  }
 
   return (
     <>
@@ -41,9 +50,12 @@ const Card = (props) => {
             <div className="type">{props.name}</div>
           </div>
           <div className="stat">
-            <button className="type readybutton" onClick={concluirTarefa}>
-              Entregar
-            </button>
+            <Button color='gray'  onClick={() => cardType(props.cardType)}>
+              
+             
+            
+              {props.buttomName}
+            </Button>
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Menu from "./MainPageComponents/menu";
 import Card from "./MainPageComponents/card";
-import ShopModal from "./MainPageComponents/shopModal";
+import ImageChest2 from './imagens/shopChest2.jpg'
 
 
 const TaskGame = () => {
@@ -14,7 +14,6 @@ const TaskGame = () => {
   return (
     <>
       <Menu />
-      <ShopModal />
       {
         //cards.map
         <div className="all">
@@ -25,6 +24,9 @@ const TaskGame = () => {
           name="Nathalia"
           price="5"
           rarity="comum"
+          image = {ImageChest2}
+          cardType =  "shop"
+          buttomName = "Comprar!"
         />
         </div>
       }

@@ -7,6 +7,8 @@ import GroupModal from "./MainPageComponents/groupModal";
 import { Button } from "semantic-ui-react";
 
 
+
+
 const Grupos = () => {
   const [cards, setCards] = useState([]);
   const [codes, setCodes] = useState({ code: "" });
@@ -59,14 +61,21 @@ const Grupos = () => {
       <Menu />
       <CreateGroup />
       <GroupModal />
-      {
-        //cards.map
+
+      
+      { 
+       //cards.map
+      
+       
         <GroupCard
           title="TaskGame"
+          date="Code"
           description="Um grupo de estudantes que faz coisas incriveis!"
           name="João"
           members="5"
         />
+    
+
       }
     </>
   );

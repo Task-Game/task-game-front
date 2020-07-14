@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Card from "./MainPageComponents/card";
 import Menu from "./MainPageComponents/menu";
 import comumCard from './imagens/comumTask.png'
-import epicCard from './imagens/todo-image1.png'
+import epicCard from './imagens/epicTask.png'
 import legendaryCard from './imagens/legendaryTask.png'
 import incomumCard from './imagens/incomumTask.png'
 import rareCard from './imagens/rareTask.png'
@@ -35,7 +35,7 @@ const Tarefas = () => {
     
       {
         //cards.map
-        // remover linha de baixo quando for fazer o map :v
+        // remover linha a baixo e 4 cards quando for fazer o map :v
         <>
          <div className="all">
         <Card
@@ -47,6 +47,8 @@ const Tarefas = () => {
           rarity="comum"
           color={defineColor("comum")}
           image ={defineImage("comum")}
+          cardType = "tarefa"
+          buttomName = "Entregar"
         />
         <Card
           date="31/07"
@@ -57,6 +59,8 @@ const Tarefas = () => {
           rarity="incomum"
           color={defineColor("incomum")}
           image ={defineImage("incomum")}
+          cardType = "tarefa"
+          buttomName = "Entregar"
         />
         <Card
           date="31/07"
@@ -67,6 +71,8 @@ const Tarefas = () => {
           rarity="raro"
           color={defineColor("raro")}
           image ={defineImage("raro")}
+          cardType = "tarefa"
+          buttomName = "Entregar"
         />
         <Card
           date="31/07"
@@ -77,6 +83,8 @@ const Tarefas = () => {
           rarity="epico"
           color={defineColor("epico")}
           image ={defineImage("epico")}
+          cardType = "tarefa"
+          buttomName = "Entregar"
         />
         <Card
           date="31/07"
@@ -87,6 +95,8 @@ const Tarefas = () => {
           rarity="lendario"
           color={defineColor("lendario")}
           image ={defineImage("lendario")}
+          cardType = "tarefa"
+          buttomName = "Entregar"
         />
         </div>
         </>
