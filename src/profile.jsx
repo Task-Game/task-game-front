@@ -9,7 +9,8 @@ import Modal from './MainPageComponents/trocarFotoCapa';
 export default class TaskGame extends Component {
   render() {
     return(
-        <>        
+      <>
+        <div>        
         <Menu />
       <div class="perfil">
 
