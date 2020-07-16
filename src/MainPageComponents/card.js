@@ -16,8 +16,8 @@ const Card = (props) => {
   }
 
   function cardType(cardType) {
-    if (cardType == "tarefa") return concluirTarefa();
-    else if (cardType == "shop") return comprarItem();
+    if (cardType === "tarefa") return concluirTarefa();
+    else if (cardType === "shop") return comprarItem();
   }
 
   function cardImage(backgroundImages) {

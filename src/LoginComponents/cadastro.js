@@ -2,19 +2,20 @@ import React, { Component } from "react";
 import { Button, Header, Image, Modal, Form } from "semantic-ui-react";
 import image from "../imagens/cadastro-image.jpg";
 import api from "../routes/api";
-import axios from "axios";
+
+
 
 class Cadastro extends Component {
   //cria o estado do componente, ou sua variaveis que serão funcionais 
   constructor() {
     super();
     this.state = {
-      novoUsuario: {
+      data: {
         nome: "",
         email: "",
-        senha: "",
-        empresa: "",
-        dataNascimento: "",
+        cargo: "",
+        senha: ""
+        
       },
     };
   }
@@ -22,13 +23,17 @@ class Cadastro extends Component {
 
   handleSignUp = (e) => {
     e.preventDefault();
-    const { nome, email, empresa, dataNascimento, senha } = this.state;
-    if (!nome || !email || !senha || !dataNascimento || !empresa) {
+    const { nome, email, cargo, senha } = this.state;
+    if (!nome || !email || !senha || !cargo) {
       alert("Deu ruim");
     } else {
       alert("Ta dando certo");
       console.log(this.state);
-      api.post("login", this.state);
+      api.post("user/api/v1/user", this.state, {
+        header: {
+            "Access-Control-Allow-Origin": "*",
+        }
+    });
     }
   };
 
@@ -71,18 +76,7 @@ class Cadastro extends Component {
                 <input
                   type="text"
                   placeholder="TaskGame Etecia"
-                  onChange={(e) => this.setState({ empresa: e.target.value })}
-                />
-              </Form.Field>
-
-              <Form.Field>
-                <label>Data de Nascimento</label>
-                <input
-                  type="date"
-                  placeholder="00/00/0000"
-                  onChange={(e) =>
-                    this.setState({ dataNascimento: e.target.value })
-                  }
+                  onChange={(e) => this.setState({ cargo: e.target.value })}
                 />
               </Form.Field>
 

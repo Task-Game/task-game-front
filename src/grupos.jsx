@@ -31,7 +31,7 @@ const Grupos = () => {
     console.log(codes);
   }
 
-  if (cards == [""]) {
+  if (cards === [""]) {
     return (
       <>
         <Menu />
