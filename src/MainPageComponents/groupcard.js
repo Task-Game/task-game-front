@@ -1,11 +1,16 @@
 import React from 'react';
 import '../css/mainPage/card.css';
 import TarefaModal from '../MainPageComponents/tarefaModal';
+import { Button } from 'semantic-ui-react';
+import Modal from '../MainPageComponents/button';
 
 function GroupCard(props) {
 
     return (
         <>
+        
+<Modal class='botao_membro'/>
+
             <div className="all">
 
             <div className="card">

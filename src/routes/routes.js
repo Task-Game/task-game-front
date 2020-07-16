@@ -7,7 +7,8 @@ import Shop from '../shop';
 import Profile from '../profile';
 import Groups from '../grupos';
 
-import User  from './auth'
+import User  from './auth'; 
+
 
 /*Login route verifica se as credencias estão certas ou não, e 
 passa as props para o usuario caso tudo esteja ok */

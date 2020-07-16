@@ -1,5 +1,6 @@
 import React from 'react';
 import '../css/mainPage/card.css';
+import Modal from "./button.js";
 
 function Card(props) {
 
@@ -11,6 +12,7 @@ function Card(props) {
 
     return (
         <>
+        
             <div className="all">
 
             <div className="card">

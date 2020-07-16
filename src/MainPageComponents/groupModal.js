@@ -54,6 +54,7 @@ export default class shopModal extends Component {
        Criar!
        </Button>
     </Form>
+  
 
         
        

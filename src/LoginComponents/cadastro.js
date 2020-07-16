@@ -17,11 +17,13 @@ class Cadastro extends Component{
           "senha": "", 
           "empresa":"",
           "dataNascimento": "",
+          
         }
       
     };
   }
   /*Função que pega os imputs do usuario e manda para o banco(falta a chamada da api)*/
+
 
   handleSignUp = e =>{
     e.preventDefault();
@@ -89,6 +91,21 @@ class Cadastro extends Component{
      
 
     </Form.Field>
+
+  
+
+    <Form.Field>
+    <label>Você é:</label>
+    <input type="checkbox" 
+         />
+  <label for="scales">Líder</label>
+  <input type="checkbox" />
+  <label for="horns">Desenvolverdor</label>
+    </Form.Field>
+
+
+
+
       
     <Button color='teal'
      fluid type='submit'         
