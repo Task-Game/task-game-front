@@ -2,11 +2,11 @@ import React, { Component } from "react";
 import { Button, Header, Image, Modal, Form } from "semantic-ui-react";
 import image from "../imagens/cadastro-image.jpg";
 import api from "../routes/api";
-
-
+import mainPage from '../mainPage'
+import MainPage from "../mainPage";
 
 class Cadastro extends Component {
-  //cria o estado do componente, ou sua variaveis que serão funcionais 
+  //cria o estado do componente, ou sua variaveis que serão funcionais
   constructor() {
     super();
     this.state = {
@@ -14,12 +14,12 @@ class Cadastro extends Component {
         nome: "",
         email: "",
         cargo: "",
-        senha: ""
-        
+        senha: "",
       },
     };
   }
   /*Função que pega os imputs do usuario e manda para a api */
+  
 
   handleSignUp = (e) => {
     e.preventDefault();
@@ -27,13 +27,15 @@ class Cadastro extends Component {
     if (!nome || !email || !senha || !cargo) {
       alert("Deu ruim");
     } else {
-      alert("Ta dando certo");
+      alert("Você foi cadastrado! Por favor atualize a pagina");
       console.log(this.state);
       api.post("user/api/v1/user", this.state, {
         header: {
-            "Access-Control-Allow-Origin": "*",
-        }
-    });
+          "Access-Control-Allow-Origin": "*",
+        },
+      });
+      
+
     }
   };
 
@@ -88,8 +90,7 @@ class Cadastro extends Component {
                   onChange={(e) => this.setState({ senha: e.target.value })}
                 />
               </Form.Field>
-
-              <Button color="teal" fluid type="submit">
+              <Button color="teal" fluid type="submit">     
                 Bora!
               </Button>
             </Form>

@@ -48,7 +48,7 @@ export default class shopModal extends Component {
       console.log(this.state);
     } else {
       
-      alert("Ta dando certo");
+      alert("Tarefa criada! verique-a ela na aba 'Tarefas' ");
 
       api.post('task/api/v1/task', this.state, {
         header: {

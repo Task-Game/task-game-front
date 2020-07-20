@@ -20,7 +20,7 @@ const Tarefas = () => {
   }, []);
 
   function defineColor(raridade){
-    if(raridade === "comum") return "gray"   
+    if(raridade === "comum") return "#808080"   
     else if(raridade === "incomum") return "#0ed145"
     else if(raridade === "raro") return "#4f4fff"
     else if(raridade === "epico") return "#ff4fff"

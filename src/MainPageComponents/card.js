@@ -49,10 +49,7 @@ const Card = (props) => {
             <div className="type">{props.name}</div>
           </div>
           <div className="stat">
-            <Button color='gray'  onClick={() => cardType(props.cardType)}>
-              
-             
-            
+            <Button onClick={() => cardType(props.cardType)}>           
               {props.buttomName}
             </Button>
           </div>

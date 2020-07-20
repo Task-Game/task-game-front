@@ -46,7 +46,7 @@ const MenuPrincipal = () => {
             <ul>
               <li>
                 <Link to="/tarefas" style={{ background: "#998AD3" }}>
-                  <FaClipboard /> Tarefa
+                  <FaClipboard /> Tarefas
                 </Link>
               </li>
               <li>

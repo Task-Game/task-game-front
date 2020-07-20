@@ -18,7 +18,7 @@ function initialState() {
  os detalhes estão no arquivo provider e auth da pasta routes, o "+1" no final do token é porque o o id do usuario + 1(do array) */
 function login({ nome, senha }, users) {
   var x = 0;
-  console.log(x);
+  
   while (x < users.data.length){
     if (nome === users.data[x].nome && senha === users.data[x].senha) {
       return { token: users.data[x].idUsuario };
@@ -88,7 +88,7 @@ useEffect(() => {
           <Form onSubmit={onSubmit}>
             <Form.Field>
               <label>Nome</label>
-              <div class="ui icon input">
+              <div className="ui icon input">
                 <input
                   type="text"
                   placeholder="Insira seu nome"
@@ -96,13 +96,13 @@ useEffect(() => {
                   name="nome"
                   values={values.nome}
                 />
-                <i aria-hidden="true" class="user icon"></i>
+                <i aria-hidden="true" className="user icon"></i>
               </div>
             </Form.Field>
 
             <Form.Field>
               <label>Senha</label>
-              <div class="ui icon input">
+              <div className="ui icon input">
                 <input
                   type="password"
                   placeholder="Não deixe ninguem ver"
@@ -110,7 +110,7 @@ useEffect(() => {
                   name="senha"
                   values={values.senha}
                 />
-                <i aria-hidden="true" class="shield alternate icon"></i>
+                <i aria-hidden="true" className="shield alternate icon"></i>
               </div>
             </Form.Field>
 

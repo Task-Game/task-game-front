@@ -23,7 +23,7 @@ export default class shopModal extends Component {
       alert("Deu ruim");
       console.log(this.state);
     } else {
-      alert("Ta dando certo");
+      alert("Grupo criado com sucesso!");
       console.log(this.state);
       api.post("group/api/v1/group", this.state, {
         header: {
