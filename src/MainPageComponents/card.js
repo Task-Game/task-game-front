@@ -5,13 +5,12 @@ import { Button} from "semantic-ui-react";
 const Card = (props) => {
   //função chamada ao concluir a tarefa
   function concluirTarefa() {
-    //post perfilprice = perfilprice +  price
+    //patch perfilprice = perfilprice + recompensa
     //delete tarefa
     alert("Meus parabens! foi adicionado " + props.price + "g a sua conta");
   }
   function comprarItem() {
-    //post perfilprice = perfilprice -  price
-    //delete tarefa
+    //patch perfilprice = perfilprice - preco
     alert(`Meus parabens! foi adicionado "` + props.title + `" a sua conta`);
   }
 

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Button, Header, Image, Modal, Form } from "semantic-ui-react";
 import GuildImage from "../imagens/guildman.jpg";
+import api from '../routes/api';
 
 export default class shopModal extends Component {
   //construção do estado
@@ -24,7 +25,11 @@ export default class shopModal extends Component {
     } else {
       alert("Ta dando certo");
       console.log(this.state);
-      //post
+      api.post("group/api/v1/group", this.state, {
+        header: {
+            "Access-Control-Allow-Origin": "*",
+        }
+    });
     }
   };
 

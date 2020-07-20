@@ -72,10 +72,10 @@ class Cadastro extends Component {
               </Form.Field>
 
               <Form.Field>
-                <label>Qual empresa você trabalha</label>
+                <label>Qual o seu atual cargo?</label>
                 <input
                   type="text"
-                  placeholder="TaskGame Etecia"
+                  placeholder="Desenvolvedor"
                   onChange={(e) => this.setState({ cargo: e.target.value })}
                 />
               </Form.Field>

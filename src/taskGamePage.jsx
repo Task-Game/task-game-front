@@ -6,12 +6,17 @@ import epicCard from './imagens/epicTask.png'
 import legendaryCard from './imagens/legendaryTask.png'
 import incomumCard from './imagens/incomumTask.png'
 import rareCard from './imagens/rareTask.png'
+import api from "./routes/api";
 
 const Tarefas = () => {
   const [cards, setCards] = useState([]);
 
   useEffect(() => {
-    //get
+    api.get("task/api/v1/task").then((response) => {
+      const use = response.data;
+      setCards(use);
+      console.log(use);
+    });
   }, []);
 
   function defineColor(raridade){

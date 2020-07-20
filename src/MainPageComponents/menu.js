@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { Menu, Image } from "semantic-ui-react";
 import "../css/mainPage/menuPrincipal.css";
 import {
@@ -13,9 +13,23 @@ import {
 } from "react-icons/fa";
 import "../css/mainPage/menu.css";
 import { Link } from "react-router-dom";
+import api from '../routes/api';
+import User from "../routes/auth";
 
-class menu extends Component {
-  render() {
+
+const MenuPrincipal = () => {
+  const [stats, setStats] = useState([]);
+  const UserId = useContext(User);
+
+    useEffect(() => {
+    api.get(`user/api/v1/user/${UserId.token}`).then((response) => {
+      const use = response.data;
+      setStats(use);
+      console.log(use);
+     
+    });
+  }, []);
+
     return (
       <>
         <Menu   borderless style={{background:"#AF9BCC"}} size="tiny" > 
@@ -65,17 +79,17 @@ class menu extends Component {
 
           <Menu.Header id="bemVindo">
             <div>
-              <h1>Bem Vindo</h1>
+              <h1>Bem Vindo!</h1>
             </div>
             <div>
-              <h2>Usuario</h2>
+            <h2>{stats.nome}</h2>
             </div>
           </Menu.Header>
 
           <Menu.Item>
             <div id="bemVindo">
               <h3>
-                Projetos: 1<br /> Tarefas: 1{" "}
+                Tarefas: 1<br /> Creditos: {stats.credito}
               </h3>{" "}
               {/* BR é uma gambiarra*/}
             </div>
@@ -88,7 +102,7 @@ class menu extends Component {
         </Menu>
       </>
     );
-  }
+  
 }
 
-export default menu;
+export default MenuPrincipal;

@@ -5,16 +5,18 @@ import GroupCard from "./MainPageComponents/groupcard";
 import CreateGroup from "./MainPageComponents/createGroup";
 import GroupModal from "./MainPageComponents/groupModal";
 import { Button } from "semantic-ui-react";
-
-
-
+import api from "./routes/api";
 
 const Grupos = () => {
   const [cards, setCards] = useState([]);
   const [codes, setCodes] = useState({ code: "" });
 
   useEffect(() => {
-    //get
+    api.get("group/api/v1/group").then((response) => {
+      const use = response.data;
+      setCards(use);
+      console.log(use);
+    });
   }, []);
 
   function onSubmit(event) {
@@ -40,7 +42,10 @@ const Grupos = () => {
 
         <form onSubmit={onSubmit}>
           <div className="no-group">
-            <p>Parece que você não esta em nenhum grupo, digita aqui o codigo de um ou crie um lá em cima!</p>
+            <p>
+              Parece que você não esta em nenhum grupo, digita aqui o codigo de
+              um ou crie um lá em cima!
+            </p>
 
             <input
               type="text"
@@ -62,11 +67,8 @@ const Grupos = () => {
       <CreateGroup />
       <GroupModal />
 
-      
-      { 
-       //cards.map
-      
-       
+      {
+        //cards.map
         <GroupCard
           title="TaskGame"
           date="Code"
@@ -74,8 +76,6 @@ const Grupos = () => {
           name="João"
           members="5"
         />
-    
-
       }
     </>
   );
