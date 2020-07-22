@@ -82,6 +82,11 @@ const MenuPrincipal = () => {
               <h1>Bem Vindo!</h1>
             </div>
             <div>
+
+
+
+
+              
             <h2>{stats.nome}</h2>
             </div>
           </Menu.Header>

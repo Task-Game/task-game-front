@@ -1,0 +1,85 @@
+
+.titulo{
+    margin-top: 30px;
+    margin-left: 50px;
+    color: #fff;
+
+}
+.linha{
+    margin-top: 50px;
+}
+.text{    color: #fff;
+    font-family: 'Roboto',sans-serif;
+    font-size: 15px;
+
+}
+
+.imagem_rapha{
+    width:350px;
+    height: 350px;
+    border-radius: 60%;
+    margin-top: 100px;
+
+    margin-left: 80px;
+
+}
+.info_rapha{
+    margin-left: 470px;
+    margin-top: -160px;
+    color: #fff;
+}
+
+.imagem_naty{
+    width:350px;
+    height: 350px;
+    border-radius: 60%;
+    margin-top: -30px;
+
+    margin-left: 1100px;
+
+}
+.info_naty{
+    margin-left: 900px;
+    margin-top: -100px;
+    color: #fff;
+}
+.imagem_pedro{
+    width:350px;
+    height: 350px;
+    border-radius: 60%;
+    margin-top: 100px;
+
+    margin-left: 80px;
+
+}
+.info_pedro{
+    margin-left: 470px;
+    margin-top: -150px;
+        color: #fff;
+}
+.imagem_joao{
+    width:350px;
+    height: 350px;
+    border-radius: 60%;
+
+    margin-left: 1100px;
+
+}
+.info_joao{
+    margin-left: 850px;
+    margin-top: -140px;
+    color: #fff;
+}
+.imagem_ju{
+    width: 350px;
+    height:350px;
+    border-radius: 60%;
+    margin-top: 100px;
+    margin-left: 80px;
+
+}
+.info_ju{
+    color: #fff;
+    margin-left: 470px;
+    margin-top: -140px ;
+}
