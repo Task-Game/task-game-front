@@ -96,11 +96,15 @@ export default class shopModal extends Component {
 
               <Form.Field>
                 <label>Quanto ele vale</label>
-                <input
-                  type="text"
-                  placeholder="200"
-                  onChange={(e) => this.setState({ valor: e.target.value })}
-                />
+                <select onChange={(e) => this.setState({ raridade: e.target.value })}>
+                <option value ="">Selecione a frequência!</option>
+                  <option value ="diario">Diario</option>
+                  <option value ="semanal">Semanal</option>
+                  <option value ="quinzenal">Quinzenal</option>
+                  <option value ="mensal">Mensal</option>
+                  <option value ="none">Uma vez</option>
+                  
+                </select>
               </Form.Field>
 
               <Form.Field>

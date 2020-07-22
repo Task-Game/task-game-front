@@ -1,12 +1,13 @@
 import React from "react";
 import "../css/mainPage/card.css";
 import { Button} from "semantic-ui-react";
+import CheckList from './checklistModal';
 
 const Card = (props) => {
   //função chamada ao concluir a tarefa
   function concluirTarefa() {
-    //patch perfilprice = perfilprice + recompensa
-    //delete tarefa
+    //patch idcredito = idcredito + tarefa_recompensa
+    //tarefa = true
     alert("Meus parabens! foi adicionado " + props.price + "g a sua conta");
   }
   function comprarItem() {
@@ -37,11 +38,14 @@ const Card = (props) => {
           <span className="date">{props.date}</span>
           <h2>{props.title}</h2>
           <p>{props.description}</p>
+          <CheckList
+          color = {props.color}
+          display ={props.display} />
         </div>
 
         <div className="card-stats" style={{ background: props.color }}>
           <div className="stat">
-            <div className="valor">{props.price}g</div>
+            <div className="valor">{props.price}c</div>
             <div className="type">{props.rarity}</div>
           </div>
           <div className="stat">

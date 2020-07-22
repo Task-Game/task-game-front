@@ -89,9 +89,9 @@ const MenuPrincipal = () => {
           <Menu.Item>
             <div id="bemVindo">
               <h3>
+                {/*tarefas = stats.userTarefas.lenght */}
                 Tarefas: 1<br /> Creditos: {stats.credito}
               </h3>{" "}
-              {/* BR é uma gambiarra*/}
             </div>
           </Menu.Item>
 
