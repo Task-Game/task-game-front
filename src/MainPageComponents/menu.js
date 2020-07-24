@@ -23,7 +23,7 @@ const MenuPrincipal = () => {
   const UserId = useContext(User);
 
     useEffect(() => {
-    api.get(`user/api/v1/user/${UserId.token}`).then((response) => {
+    api.get(`user/api/v1/${UserId.token}`).then((response) => {
       const use = response.data;
       setStats(use);
       console.log(use);
@@ -31,7 +31,7 @@ const MenuPrincipal = () => {
     });
   }, []);
     useEffect(() => {
-    api.get(`task/api/v1/task`).then((response) => {
+    api.get(`task/api/v1/`).then((response) => {
       const use = response.data.data;
       setTasks(use);
       console.log(use);

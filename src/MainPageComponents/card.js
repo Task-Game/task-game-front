@@ -13,7 +13,7 @@ const Card = (props) => {
 
   //função chamada ao concluir a tarefa
   function concluirTarefa(recompensa,IDTarefa, UserID) {
-    api.patch(`user/api/v1/user/${UserID}`, {data: {credito: recompensa}});
+    api.patch(`user/api/v1/${UserID}`, {data: {credito: recompensa}});
     //api.delete(`/task/api/v1/task/${IDTarefa}`)
     console.log(recompensa)
 

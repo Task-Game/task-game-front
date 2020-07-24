@@ -8,7 +8,7 @@ import api from "./routes/api";
 import User from "./routes/auth";
 
 const Grupos = () => {
-  const [cards, setCards] = useState(["1","2"]);
+  const [cards, setCards] = useState([]);
   const [codes, setCodes] = useState({ code: "" });
   const [stats, setStats] = useState([]);
   const UserId = useContext(User);
@@ -16,7 +16,7 @@ const Grupos = () => {
   
 
   useEffect(() => {
-    api.get("group/api/v1/group").then(response => {
+    api.get("group/api/v1").then(response => {
       console.log(response.data.data)
       const use = response.data.data;
       setCards(use);
@@ -25,7 +25,7 @@ const Grupos = () => {
   }, []);
 
   useEffect(() => {
-    api.get(`user/api/v1/user/${UserId.token}`).then((response) => {
+    api.get(`user/api/v1/${UserId.token}`).then((response) => {
       const use = response.data;
       setStats(use);
       console.log(use);

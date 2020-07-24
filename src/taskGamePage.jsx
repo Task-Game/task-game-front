@@ -10,9 +10,18 @@ import api from "./routes/api";
 
 const Tarefas = () => {
   const [cards, setCards] = useState([]);
+  const [groups, setGroups] = useState([]);
+  
+  useEffect(() => {
+    api.get("group/api/v1").then((response) => {
+      const use = response.data.data;
+      setGroups(use);
+      console.log(use);
+    });
+  }, []);
 
   useEffect(() => {
-    api.get("task/api/v1/task").then((response) => {
+    api.get("task/api/v1/").then((response) => {
       const use = response.data.data;
       setCards(use);
       console.log(use);
@@ -52,7 +61,7 @@ const Tarefas = () => {
           date={card.prazo}
           title={card.nome}
           description={card.descricao}
-          name={"Pedro"}
+          name={groups[card.Grupo_idGrupo].nome}
           price={definePrice(card.Raridade_idRaridade)}
           rarity={card.Raridade_idRaridade}
           color={defineColor(card.Raridade_idRaridade)}
