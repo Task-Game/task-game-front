@@ -29,7 +29,7 @@ class Cadastro extends Component {
     } else {
       alert("Você foi cadastrado! Por favor atualize a pagina");
       console.log(this.state);
-      api.post("user/api/v1/user", this.state, {
+      api.post("api/v1/user", this.state, {
         header: {
           "Access-Control-Allow-Origin": "*",
         },

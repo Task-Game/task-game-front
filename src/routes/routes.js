@@ -8,6 +8,7 @@ import Profile from "../profile";
 import Groups from "../grupos";
 import StoreProvider from "../routes/provider";
 import Confirm from "../LoginComponents/confirm";
+import VisibleProfile from '../visibleProfile';
 
 import User from "./auth";
 
@@ -41,6 +42,8 @@ const routes = () => (
         <LoginRoute exact path="/grupos" component={Groups}></LoginRoute>
         <LoginRoute exact path="/loja" component={Shop}></LoginRoute>
         <LoginRoute exact path="/perfil" component={Profile}></LoginRoute>
+        <LoginRoute path="/userperfil" component={VisibleProfile}></LoginRoute>
+
         <LoginRoute exact path="/sobre" component={About}></LoginRoute>
         <LoginRoute path="/tarefas" component={TaskGame} />
         <Route

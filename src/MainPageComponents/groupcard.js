@@ -2,19 +2,22 @@ import React from "react";
 import "../css/mainPage/card.css";
 import TarefaModal from "../MainPageComponents/tarefaModal";
 import ShopModal from '../MainPageComponents/shopModal';
-
+import Modal from '../MainPageComponents/button'
 
 function GroupCard(props) {
   return (
     <>
+    <Modal/>
       <div className="all">
         <div className="card">
           <div className="card-imagegroup "></div>
+          
           <div className="card-text">
             <span className="date">{props.date}</span>
             <h2>{props.title}</h2>
             <p>{props.description}  </p>
             <ShopModal />
+
           </div>
           <div className="card-stats" style={{ backgroundColor: "#00CED1" }}>
             <div className="stat">
@@ -27,6 +30,7 @@ function GroupCard(props) {
             </div>
             <div className="stat">
               <TarefaModal />
+
             </div>
           </div>
         </div>

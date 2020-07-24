@@ -1,0 +1,27 @@
+
+
+.ui.button{
+    border-radius: 10em;
+    box-shadow: 0 0 0 2px #fff inset;
+    background: transparent none;
+    color: #fff;
+}
+.content{
+padding: 20px;
+width: 300px;
+
+}
+
+.img_membro{
+    margin-top: 30px;
+    width: 80px;
+    height: 80px;
+    border-radius: 70px;
+}
+
+.nome_membro1{
+    margin-top: -40px;
+    margin-left: 200px;
+    text-align: justify;
+    
+}

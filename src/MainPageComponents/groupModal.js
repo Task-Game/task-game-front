@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Button, Header, Image, Modal, Form } from "semantic-ui-react";
 import GuildImage from "../imagens/guildman.jpg";
 
+
 export default class shopModal extends Component {
   constructor() {
     super();
@@ -37,6 +38,9 @@ export default class shopModal extends Component {
           </Button>
         }
       >
+         <Button inverted circular>
+            Procurar
+          </Button>
         <Modal.Header>Encontrar grupos</Modal.Header>
         <Modal.Content image>
           <Image wrapped size="medium" src={GuildImage} />

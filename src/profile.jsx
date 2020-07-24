@@ -10,8 +10,27 @@ import axios from 'axios';
 
 
 
-export default class TaskGame extends Component {
-  render() {
+
+const Profile = () => {
+  const [stats, setStats] = useState([]);
+  const UserId = useContext(User);
+
+    useEffect(() => {
+    api.get(`api/v1/user/${UserId.token}`).then((response) => {
+      const use = response.data;
+      setStats(use);
+      console.log(use);
+     
+    });
+  }, []);
+
+  
+
+  
+
+
+
+ 
     return(
       <>
         <div>        </div>
@@ -48,7 +67,7 @@ export default class TaskGame extends Component {
     	<div class="dados_perfil" >
          	<label>Nome</label>
         <input type="text" class="nome_usuario"
-         placeholder={User.nome}
+         placeholder={stats.nome}
          onChange={(e) => this.setState({ nome: e.target.value })}
         />
         
@@ -56,21 +75,21 @@ export default class TaskGame extends Component {
     	<div class="dados_perfil">
       <label>Email</label>  
       <input type="text" name="email_usuario"
-       placeholder={User.email}
+       placeholder={stats.email}
        onChange={(e) => this.setState({ email: e.target.value })}/>
     	</div>
     
     	<div class="dados_perfil2">
     		<label>Senha</label>
-    		<input type="text" name="senha_usuario"
-         placeholder={User.senha}
+    		<input type="password" name="senha_usuario"
+         placeholder={stats.senha}
          onChange={(e) => this.setState({ senha: e.target.value })}
         />
     	</div>
     	<div class="dados_perfil3">
     		<label>Cargo</label>
     		<input type="text" name="cargo_usuario"
-         placeholder={User.cargo}
+         placeholder={stats.cargo}
          onChange={(e) => this.setState({ cargo: e.target.value })}/>
     	</div>
 
@@ -79,15 +98,15 @@ export default class TaskGame extends Component {
 
 <div class='botoes'>
   <button class="cancelar_alteracoes">Cancelar</button>
-  <button class="salvar_alteracoes">Salvar</button>
+  <button class="salvar_alteracoes" > Salvar</button>
 </div>
 
 
 <div class="recompensas">
-  <h2>Recompensas resgatadas</h2>  
+  <h2>Recompensas </h2>  
   <div class="card_recompensa">
         <div class="card_recompensa">
-    <h4 class="nome_recompensa">Recompensas</h4>
+    <h4 class="nome_recompensa">Folga</h4>
           <p class="descricao_recompensa">Folga de um dia entre o mês de abril e maio</p>
           <p class="data_recompensa">Resgatada no dia 28 de maio</p>
           </div>
@@ -108,4 +127,4 @@ export default class TaskGame extends Component {
 </>
     );
   }
-}
+  export default Profile;
