@@ -34,13 +34,13 @@ const Card = (props) => {
 
 
   function comprarItem(recompensa, UserID, UserCreditos) {
-    api.patch(`user/api/v1/${UserID.token}`,  {"credito": recompensa - UserCreditos});
+    api.patch(`user/api/v1/${UserID.token}`,  {"credito":  UserCreditos - recompensa});
     alert(`Meus parabens! foi adicionado "` + props.title + `" a sua conta`);
   }
 
   function cardType(cardType) {
     if (cardType === "tarefa") return concluirTarefa(props.price, props.id, UserId, stats.credito);
-    else if (cardType === "shop") return comprarItem();
+    else if (cardType === "shop") return comprarItem(props.price, UserId, stats.credito);
   }
 
   function cardImage(backgroundImages) {
