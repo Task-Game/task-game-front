@@ -2,35 +2,55 @@ import React, { useEffect, useState } from "react";
 import Menu from "./MainPageComponents/menu";
 import Card from "./MainPageComponents/card";
 import ImageChest2 from './imagens/shopChest2.jpg'
+import api from './routes/api'
 
 
 const TaskGame = () => {
+
   const [cards, setCards] = useState([]);
+  const [groups, setGroups] = useState([]);
 
   useEffect(() => {
-    //get
+    api.get("item/api/v1/item").then((response) => {
+      const use = response.data.data;
+      setCards(use);
+      console.log(use);
+    });
+  }, []);
+
+  useEffect(() => {
+    api.get("group/api/v1/group").then((response) => {
+      const use = response.data.data;
+      setGroups(use);
+      console.log(use);
+    });
   }, []);
 
   return (
     <>
       <Menu />
-      {
-        //cards.map
-        <div className="all">
-        <Card
+      <div className="all">
+      { 
+        cards.map((card) =>(
+          <Card
           date="NOVIDADE!"
-          title="Lista de tarefas"
-          description="Uma simples lista de tarefa"
-          name="Nathalia"
-          price="5"
-          rarity="comum"
+          title={card.nome}
+          description={card.descricao}
+          name={groups[card.Loja_idLoja].nome}
+          price={card.valor}
+          rarity="Preço!"
           image = {ImageChest2}
-          cardType =  "shop"
+          cardType = "shop"
           buttomName = "Comprar!"
           display  ="none"
+          key = {card.idItem}
+          id = {card.Loja_idLoja}
         />
-        </div>
+     
+      ))
+       
       }
+          </div>
     </>
   );
 };

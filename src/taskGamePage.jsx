@@ -60,6 +60,7 @@ const Tarefas = () => {
           cardType = "tarefa"
           buttomName = "Entregar"
           key={card.idTarefa}
+          id={card.idTarefa}
         />
        
       ))
