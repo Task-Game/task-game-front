@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../css/mainPage/card.css";
 import { Button} from "semantic-ui-react";
 import CheckList from './checklistModal';
+import api from '../routes/api';
+import User from "../routes/auth";
+
+
+
 
 const Card = (props) => {
+  const UserId = useContext(User);
+
   //função chamada ao concluir a tarefa
-  function concluirTarefa() {
+  function concluirTarefa(recompensa,IDTarefa, UserID) {
+    api.patch(`api/v1/user/${UserID}`, {data: {credito: recompensa}})
+    console.log(recompensa)
+
     //patch idcredito = idcredito + tarefa_recompensa
     //tarefa = true
     alert("Meus parabens! foi adicionado " + props.price + "g a sua conta");
@@ -16,7 +26,7 @@ const Card = (props) => {
   }
 
   function cardType(cardType) {
-    if (cardType === "tarefa") return concluirTarefa();
+    if (cardType === "tarefa") return concluirTarefa(props.price, props.key, UserId);
     else if (cardType === "shop") return comprarItem();
   }
 
@@ -28,6 +38,13 @@ const Card = (props) => {
       borderTopRightRadius: "15px",
       backgroundSize: "cover",
     };
+  }
+  function setRarityName(raridade){
+    if(raridade === 1) return "Comum"   
+    else if(raridade === 2) return "Incomum"
+    else if(raridade === 3) return "Raro"
+    else if(raridade === 4) return "Épico!"
+    else if(raridade === 5) return "Lendário!!"
   }
 
   return (
@@ -46,7 +63,7 @@ const Card = (props) => {
         <div className="card-stats" style={{ background: props.color }}>
           <div className="stat">
             <div className="valor">{props.price}c</div>
-            <div className="type">{props.rarity}</div>
+            <div className="type">{setRarityName(props.rarity)}</div>
           </div>
           <div className="stat">
             <div className="valor">Por</div>

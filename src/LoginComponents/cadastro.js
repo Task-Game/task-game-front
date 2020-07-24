@@ -4,7 +4,7 @@ import image from "../imagens/cadastro-image.jpg";
 import api from "../routes/api";
 import mainPage from '../mainPage'
 import MainPage from "../mainPage";
-
+import axios from 'axios'
 class Cadastro extends Component {
   //cria o estado do componente, ou sua variaveis que serão funcionais
   constructor() {
@@ -29,15 +29,28 @@ class Cadastro extends Component {
     } else {
       alert("Você foi cadastrado! Por favor atualize a pagina");
       console.log(this.state);
-      api.post("user/api/v1/user", this.state, {
-        header: {
-          "Access-Control-Allow-Origin": "*",
-        },
-      });
-      
-
+      axios.post("http://127.0.0.1:5000/user/api/v1/user", this.state, 
+      { method: 'post', mode: 'no-cors' ,
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "*",
+        "Access-Control-Allow-Headers": "*"
+      }}, ); 
+    
     }
   };
+
+    /*   
+            const requestOptions = {
+        method: 'POST',
+        headers: {"Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "*",
+        "Access-Control-Allow-Headers": "*"},
+         mode: 'cors' 
+  
+    };
+    fetch('http://127.0.0.1:5000/api/v1/user', requestOptions, {body: JSON.stringify(this.state)})
+      */
 
   render() {
     return (
@@ -67,7 +80,7 @@ class Cadastro extends Component {
               <Form.Field>
                 <label>Insira seu Email!</label>
                 <input
-                  type="email"
+                  type="text"
                   placeholder="tcctaskgame@gmail.com"
                   onChange={(e) => this.setState({ email: e.target.value })}
                 />

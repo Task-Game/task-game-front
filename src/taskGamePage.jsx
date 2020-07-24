@@ -13,101 +13,59 @@ const Tarefas = () => {
 
   useEffect(() => {
     api.get("task/api/v1/task").then((response) => {
-      const use = response.data;
+      const use = response.data.data;
       setCards(use);
       console.log(use);
     });
   }, []);
 
   function defineColor(raridade){
-    if(raridade === "comum") return "#808080"   
-    else if(raridade === "incomum") return "#0ed145"
-    else if(raridade === "raro") return "#4f4fff"
-    else if(raridade === "epico") return "#ff4fff"
-    else if(raridade === "lendario") return "#ffad14"
+    if(raridade === 1) return "#808080"   
+    else if(raridade === 2) return "#0ed145"
+    else if(raridade === 3) return "#4f4fff"
+    else if(raridade === 4) return "#ff4fff"
+    else if(raridade === 5) return "#ffad14"
   }
   function defineImage(raridade){
-    if(raridade === "comum") return comumCard   
-    else if(raridade === "incomum") return incomumCard
-    else if(raridade === "raro") return rareCard
-    else if(raridade === "epico") return epicCard
-    else if(raridade === "lendario") return legendaryCard
+    if(raridade === 1) return comumCard   
+    else if(raridade === 2) return incomumCard
+    else if(raridade === 3) return rareCard
+    else if(raridade === 4) return epicCard
+    else if(raridade === 5) return legendaryCard
+  }
+  function definePrice(raridade){
+    if(raridade === 1) return "50"   
+    else if(raridade === 2) return "150"
+    else if(raridade === 3) return "500"
+    else if(raridade === 4) return "800"
+    else if(raridade === 5) return "1000"
   }
 
   return (
     <>
       <Menu />
-    
-      {
-        //cards.map
-        // remover linha a baixo e 4 cards quando for fazer o map :v
-        <>
-         <div className="all">
+      <div className="all">
+      {cards.map((card) => (
+        
+        
         <Card
-          date="31/07"
-          title="Tarefa"
-          description="Uma simples tarefa de fazer um card"
-          name="Pedro"
-          price="9"
-          rarity="comum"
-          color={defineColor("comum")}
-          image ={defineImage("comum")}
+          date={card.prazo}
+          title={card.nome}
+          description={card.descricao}
+          name={"Pedro"}
+          price={definePrice(card.Raridade_idRaridade)}
+          rarity={card.Raridade_idRaridade}
+          color={defineColor(card.Raridade_idRaridade)}
+          image ={defineImage(card.Raridade_idRaridade)}
           cardType = "tarefa"
           buttomName = "Entregar"
+          key={card.idTarefa}
         />
-        <Card
-          date="31/07"
-          title="Tarefa"
-          description="Uma simples tarefa de fazer um card"
-          name="Pedro"
-          price="9"
-          rarity="incomum"
-          color={defineColor("incomum")}
-          image ={defineImage("incomum")}
-          cardType = "tarefa"
-          buttomName = "Entregar"
-        />
-        <Card
-          date="31/07"
-          title="Tarefa"
-          description="Uma simples tarefa de fazer um card"
-          name="Pedro"
-          price="9"
-          rarity="raro"
-          color={defineColor("raro")}
-          image ={defineImage("raro")}
-          cardType = "tarefa"
-          buttomName = "Entregar"
-        />
-        <Card
-          date="31/07"
-          title="Tarefa"
-          description="Uma simples tarefa de fazer um card"
-          name="Pedro"
-          price="9"
-          rarity="epico"
-          color={defineColor("epico")}
-          image ={defineImage("epico")}
-          cardType = "tarefa"
-          buttomName = "Entregar"
-        />
-        <Card
-          date="31/07"
-          title="Tarefa"
-          description="Uma simples tarefa de fazer um card"
-          name="Pedro"
-          price="9"
-          rarity="lendario"
-          color={defineColor("lendario")}
-          image ={defineImage("lendario")}
-          cardType = "tarefa"
-          buttomName = "Entregar"
-        />
-        </div>
-        </>
+       
+      ))
       }
-      
+       </div>
     </>
-  );
+);
 };
 export default Tarefas;

@@ -1,21 +1,35 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import Menu from "./MainPageComponents/menu";
 import "./css/mainPage/menuPrincipal.css";
 import GroupCard from "./MainPageComponents/groupcard";
 import CreateGroup from "./MainPageComponents/createGroup";
 import GroupModal from "./MainPageComponents/groupModal";
-import { Button } from "semantic-ui-react";
 import api from "./routes/api";
+import User from "./routes/auth";
 
 const Grupos = () => {
-  const [cards, setCards] = useState([]);
+  const [cards, setCards] = useState(["1","2"]);
   const [codes, setCodes] = useState({ code: "" });
+  const [stats, setStats] = useState([]);
+  const UserId = useContext(User);
+
+  
 
   useEffect(() => {
-    api.get("group/api/v1/group").then((response) => {
-      const use = response.data;
+    api.get("group/api/v1/group").then(response => {
+      console.log(response.data.data)
+      const use = response.data.data;
       setCards(use);
       console.log(use);
+    });
+  }, []);
+
+  useEffect(() => {
+    api.get(`user/api/v1/user/${UserId.token}`).then((response) => {
+      const use = response.data;
+      setStats(use);
+      console.log(use);
+     
     });
   }, []);
 
@@ -33,7 +47,7 @@ const Grupos = () => {
     console.log(codes);
   }
 
-  if (cards === [""]) {
+ /* if (cards.data === [""] || 0) {
     return (
       <>
         <Menu />
@@ -60,23 +74,29 @@ const Grupos = () => {
         </form>
       </>
     );
-  }
+  } */
   return (
     <>
       <Menu />
       <CreateGroup />
       <GroupModal />
-
+      <div className="all">
       {
-        //cards.map
-        <GroupCard
-          title="TaskGame"
-          date="Code"
-          description="Um grupo de estudantes que faz coisas incriveis!"
-          name="João"
+      
+       cards.map((card) => (
+          <GroupCard
+          key={card.idGrupo}
+          title={card.nome}
+          date={"#"+card.idGrupo}
+          description={card.descricao}
+          name={stats.nome}
           members="5"
         />
+       ))
+    
       }
+         </div>
+    
     </>
   );
 };
