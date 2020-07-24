@@ -5,6 +5,8 @@ import api from '../routes/api';
 import User from "../routes/auth";
 
 export default class shopModal extends Component {
+  static contextType = User;
+
   //construção do estado
   constructor() {
     super();
@@ -12,7 +14,8 @@ export default class shopModal extends Component {
       novoGrupo: {
         nome: "",
         descricao: "",
-        dataEncerramento:""
+        dataEncerramento:"",
+        idUsuario: this.context
       },
     };
   }
@@ -20,15 +23,15 @@ export default class shopModal extends Component {
   //pega o estado da aplicação e manda para a api
   handleSignUp = (e) => {
     e.preventDefault();
-    const { nome, descricao,  dataEncerramento} = this.state;
-    
-    if (!nome || !descricao || !dataEncerramento) {
+    const { nome, descricao,  dataEncerramento, idUsuario} = this.state;    
+    console.log(this.context.token)
+    if (!nome || !descricao || !dataEncerramento || !idUsuario) {
       alert("Deu ruim");
       console.log(this.state);
     } else {
       alert("Grupo criado com sucesso!");
       console.log(this.state);
-      api.post("group/api/v1/group", this.state, {
+      api.post("group/api/v1/group", this.state,{idUsuario : this.context.token},  {
         header: {
             "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Methods": "*",
@@ -76,6 +79,13 @@ export default class shopModal extends Component {
                 <input
                   type="date"
                   onChange={(e) => this.setState({ dataEncerramento: e.target.value })}
+                />
+              </Form.Field>
+              <Form.Field>
+                <label>Tem certeza disso?</label>
+                <input
+                  type="checkbox"
+                  onChange={(e) => this.setState({ idUsuario: this.context.token })}
                 />
               </Form.Field>
 

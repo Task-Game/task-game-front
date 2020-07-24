@@ -4,23 +4,6 @@ import tarefagirl from "../imagens/criartarefa.jpg";
 import User from "../routes/auth";
 import api from '../routes/api';
 
-function changeRaridade(raridade){
-  switch (raridade) {
-    case "comum":
-      return 0;
-    case "incomum":
-      return 1;    
-    case "raro":
-      return 2;      
-    case "epico":
-      return 3;    
-    case "lendario":
-      return 4;     
-    default:
-      break;
-  }
-}
-
 export default class shopModal extends Component {
   //importação do contexto da aplicação, ou o token do usuario que pode ser requirido em todas as partes do app
   static contextType = User;
@@ -29,25 +12,28 @@ export default class shopModal extends Component {
     super();
     this.state = {
       novoItem: {
-        nome: "",
-        descricao: "",
-        recompensa: "",
-        Raridade_idRaridadee:"",
-        prazo: "",
+        "nome": "",
+        "descricao": "",
+        "Frequencia_idFrequencia": "",    
+        "Raridade_idRaridade": "", 
+        "prazo": "",
+        "Grupo_idGrupo": "",
+        "idUsuario": ""
       },
     };
   }
 
+ 
+
   handleSignUp = (e) => {
     ////mesmo esquema do createGroup, a parte de cima também
     e.preventDefault();
-    const { nome, descricao, valor, raridade, prazo } = this.state;
-    this.state.raridade = changeRaridade(this.state.raridade)
-    if (!nome || !descricao || !valor || !raridade || !prazo) {
+    const { nome, descricao, Raridade_idRaridade, prazo, Frequencia_idFrequencia ,Grupo_idGrupo } = this.state;
+    if (!nome || !descricao || !Raridade_idRaridade || !prazo || !Frequencia_idFrequencia || !Grupo_idGrupo) {
       alert("Deu ruim");
       console.log(this.state);
     } else {
-      
+      this.state.idUsuario = this.context.token;
       alert("Tarefa criada! verique-a ela na aba 'Tarefas' ");
 
       api.post('task/api/v1/task', this.state, {
@@ -56,7 +42,6 @@ export default class shopModal extends Component {
         }
       })
       console.log(this.state);    
-     console.log(this.context);
     }
   };
 
@@ -95,27 +80,27 @@ export default class shopModal extends Component {
               </Form.Field>
 
               <Form.Field>
-                <label>Quanto ele vale</label>
-                <select onChange={(e) => this.setState({ raridade: e.target.value })}>
+                <label>Quantas vezes ira fazer?</label>
+                <select onChange={(e) => this.setState({ Frequencia_idFrequencia: e.target.value })}>
                 <option value ="">Selecione a frequência!</option>
-                  <option value ="diario">Diario</option>
-                  <option value ="semanal">Semanal</option>
-                  <option value ="quinzenal">Quinzenal</option>
-                  <option value ="mensal">Mensal</option>
-                  <option value ="none">Uma vez</option>
+                  <option value ="1">Diario</option>
+                  <option value ="2">Semanal</option>
+                  <option value ="3">Quinzenal</option>
+                  <option value ="4">Mensal</option>
+                  <option value ="5">Uma vez</option>
                   
                 </select>
               </Form.Field>
 
               <Form.Field>
                 <label>E sua raridade</label>
-                <select onChange={(e) => this.setState({ raridade: e.target.value })}>
+                <select onChange={(e) => this.setState({ Raridade_idRaridade: e.target.value })}>
                 <option value ="">Selecione a raridade!</option>
-                  <option value ="comum">Comum</option>
-                  <option value ="incomum">Incomum</option>
-                  <option value ="raro">Raro</option>
-                  <option value ="epico">Épico</option>
-                  <option value ="lendario">Lendario!!</option>
+                  <option value ="1">Comum</option>
+                  <option value ="2">Incomum</option>
+                  <option value ="3">Raro</option>
+                  <option value ="4">Épico</option>
+                  <option value ="5">Lendario!!</option>
                   
                 </select>
               </Form.Field>
@@ -126,6 +111,14 @@ export default class shopModal extends Component {
                   type="date"
                   placeholder="00/00/0000"
                   onChange={(e) => this.setState({ prazo: e.target.value })}
+                />
+              </Form.Field>
+              <Form.Field>
+                <label>Confirme o código do grupo</label>
+                <input
+                  type="number"
+                  placeholder="1"
+                  onChange={(e) => this.setState({ Grupo_idGrupo: e.target.value })}
                 />
               </Form.Field>
 
