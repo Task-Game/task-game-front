@@ -19,6 +19,7 @@ import User from "../routes/auth";
 
 const MenuPrincipal = () => {
   const [stats, setStats] = useState([]);
+  const [tasks, setTasks] = useState([]);
   const UserId = useContext(User);
 
     useEffect(() => {
@@ -29,10 +30,19 @@ const MenuPrincipal = () => {
      
     });
   }, []);
+    useEffect(() => {
+    api.get(`task/api/v1/task`).then((response) => {
+      const use = response.data.data;
+      setTasks(use);
+      console.log(use);
+      
+    });
+  }, []);
+  const tarefas = tasks.lenght
 
     return (
       <>
-        <Menu   borderless style={{background:"#AF9BCC"}} size="tiny" > 
+        <Menu borderless style={{background:"#AF9BCC"}} size="tiny" > 
           <input type="checkbox" id="check" />
           <label htmlFor="check">
             <i id="cancel">
@@ -95,7 +105,7 @@ const MenuPrincipal = () => {
             <div id="bemVindo">
               <h3>
                 {/*tarefas = stats.userTarefas.lenght */}
-                Tarefas: 1<br /> Creditos: {stats.credito}
+                Tarefas: {tasks.length}<br /> Creditos: {stats.credito}
               </h3>{" "}
             </div>
           </Menu.Item>

@@ -13,7 +13,8 @@ const Card = (props) => {
 
   //função chamada ao concluir a tarefa
   function concluirTarefa(recompensa,IDTarefa, UserID) {
-    api.patch(`api/v1/user/${UserID}`, {data: {credito: recompensa}})
+    api.patch(`user/api/v1/user/${UserID}`, {data: {credito: recompensa}});
+    //api.delete(`/task/api/v1/task/${IDTarefa}`)
     console.log(recompensa)
 
     //patch idcredito = idcredito + tarefa_recompensa
@@ -26,7 +27,7 @@ const Card = (props) => {
   }
 
   function cardType(cardType) {
-    if (cardType === "tarefa") return concluirTarefa(props.price, props.key, UserId);
+    if (cardType === "tarefa") return concluirTarefa(props.price, props.id, UserId);
     else if (cardType === "shop") return comprarItem();
   }
 
@@ -41,10 +42,11 @@ const Card = (props) => {
   }
   function setRarityName(raridade){
     if(raridade === 1) return "Comum"   
-    else if(raridade === 2) return "Incomum"
-    else if(raridade === 3) return "Raro"
-    else if(raridade === 4) return "Épico!"
-    else if(raridade === 5) return "Lendário!!"
+    else if(raridade === 2) return "Incomum";
+    else if(raridade === 3) return "Raro";
+    else if(raridade === 4) return "Épico!";
+    else if(raridade === 5) return "Lendário!!";
+    else return raridade;
   }
 
   return (

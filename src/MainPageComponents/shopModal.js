@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Button, Header, Image, Modal, Form } from "semantic-ui-react";
 import SalesmanImage from "../imagens/salesman.jpg";
 import { FaCoins } from "react-icons/fa";
+import api from '../routes/api'
 
 export default class shopModal extends Component {
   constructor() {
@@ -11,7 +12,7 @@ export default class shopModal extends Component {
         nome: "",
         descricao: "",
         valor: "",
-        raridade: "",
+        Loja_idLoja:""
       },
     };
   }
@@ -19,14 +20,14 @@ export default class shopModal extends Component {
   //mesmo esquema do createGroup, a parte de cima também
   handleSignUp = (e) => {
     e.preventDefault();
-    const { nome, descricao, valor, raridade } = this.state;
-    if (!nome || !descricao || !valor || !raridade) {
+    const { nome, descricao, valor, Loja_idLoja } = this.state;
+    if (!nome || !descricao || !valor || !Loja_idLoja) {
       alert("Deu ruim");
       console.log(this.state);
     } else {
       alert("Item criada! verique-a ela na aba 'Loja' ");
       console.log(this.state);
-      //post
+      api.post("/item/api/v1/item", this.state)
     }
   };
 
@@ -75,17 +76,12 @@ export default class shopModal extends Component {
               </Form.Field>
 
               <Form.Field>
-                <label>E sua raridade</label>
-                <select
-                  onChange={(e) => this.setState({ raridade: e.target.value })}
-                >
-                  <option value="">Selecione a raridade!</option>
-                  <option value="comum">Comum</option>
-                  <option value="incomum">Incomum</option>
-                  <option value="raro">Raro</option>
-                  <option value="epico">Épico</option>
-                  <option value="lendario">Lendario!!</option>
-                </select>
+                <label>Qual o código do grupo?</label>
+                <input
+                  type="number"
+                  placeholder="1"
+                  onChange={(e) => this.setState({ Loja_idLoja: e.target.value })}
+                />
               </Form.Field>
               <Button color="teal" fluid type="submit">
                 Bora!
