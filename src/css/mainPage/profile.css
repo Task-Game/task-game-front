@@ -1,0 +1,166 @@
+body{
+}
+
+.perfil{
+	margin-left: 70px;
+	margin-top: 30px;
+}
+.image_capa{
+	background-size: cover;
+	width: 700px;
+	height: 400px;
+}
+.image_perfil{
+	height: 310px;
+	max-height: 310px;
+	width: 320px;
+	max-width: 320px;
+    border-radius: 20px;
+    margin-left: 100px;
+    margin-top: 190px;
+
+
+}
+.trocar_foto_capa{
+	margin-top: -40px;
+	font-family: 'Roboto', sans-serif;
+	border-radius:10px;
+}
+.trocar_foto_perfil{
+	margin-left : 190px;
+	margin-top:-40px;
+	font-family: 'Roboto', sans-serif;
+}
+.cards {
+	margin-left: 68px;
+	margin-top:-400px;
+	width: 350px;
+	padding: 10px;
+	border-radius: 20px;
+
+
+}
+
+
+.dados_perfil{
+	margin-top:20px;
+	margin-left:  400px;
+	font-family: 'Roboto', sans-serif; 
+	border-color: #ffffff;
+
+
+}
+
+.dados_perfil2{
+	margin-top:-100px;
+	margin-left:  700px;
+	font-family: 'Roboto', sans-serif; 
+	border-color: #ffffff;
+
+
+
+}
+
+
+.dados_perfil3{
+	margin-top:23px;
+	margin-left:  700px;
+	font-family: 'Roboto', sans-serif; 
+	border-color: #ffffff;
+
+
+}
+
+.form-control-file{
+	margin-top: 10px;
+	font-family: 'Roboto', sans-serif;
+
+}
+
+.informacoes_perfil{
+
+	position: absolute;
+	align-self:  center;
+	left: 490px;
+	color: #ffffff;
+	margin-top: -450px;
+	width: 50px;
+	height: 50px;
+	font-family: 'Roboto', sans-serif;
+}
+
+.recompensas{
+	color: #fff;
+}
+
+.card_recompensa{
+	background-color: grey;
+	width: 250px;
+	height: 150px;
+	margin-top: 10px;
+}
+
+
+.botoes{
+	margin-top: -170px;
+	margin-left:1000px;
+}
+.salvar_alteracoes{
+	padding:7px;
+	margin-left: 90px;
+	border-radius:5px;
+	border-color: white;
+	cursor: pointer;
+	font-family: 'Roboto', sans-serif;
+}
+.cancelar_alteracoes{
+	padding: 7px;
+	border-radius:5px;
+	border-color: white;
+	cursor: pointer;
+	font-family: 'Roboto', sans-serif;
+
+}
+
+.recompensas{
+	margin-top: 190px;
+
+}
+.card_recompensa{
+	background-color:grey; 
+	margin-top: 20px;
+	width: 225px;
+	height: 150px;
+	text-decoration-color: white;
+
+}
+
+.card2_recompensa{
+	background-color:grey; 
+	margin-top: 20px;
+	width: 225px;
+	height: 150px;
+	text-decoration-color: white;
+	margin-left: 250px;
+	margin-top: -160px;
+
+}
+.nome_recompensa{
+	text-align: center;
+	font-family: 'Roboto',sans-serif;
+	font-size: 20px;
+}
+.descricao_recompensa{
+	font-family: 'Roboto', sans-serif;
+	font-size: 13px;
+	text-align: justify;
+	margin-left: 10px;
+	margin-right: 10px;
+
+}
+.data_recompensa{
+	font-family: 'Roboto',sans-serif;
+	margin-left: 10px;
+	margin-right: 10px;
+
+}

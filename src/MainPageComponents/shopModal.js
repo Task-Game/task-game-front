@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Button, Header, Image, Modal, Form } from "semantic-ui-react";
 import SalesmanImage from "../imagens/salesman.jpg";
-import { FaCoins } from 'react-icons/fa'
+import { FaCoins } from "react-icons/fa";
 
 export default class shopModal extends Component {
   constructor() {
@@ -24,7 +24,7 @@ export default class shopModal extends Component {
       alert("Deu ruim");
       console.log(this.state);
     } else {
-      alert("Ta dando certo");
+      alert("Item criada! verique-a ela na aba 'Loja' ");
       console.log(this.state);
       //post
     }
@@ -32,8 +32,13 @@ export default class shopModal extends Component {
 
   render() {
     return (
-      <Modal trigger={ <Button basic color='grey' > <FaCoins style ={{color: "#e6e600"}}/> </Button>}
-        
+      <Modal
+        trigger={
+          <Button basic color="grey">
+            {" "}
+            <FaCoins style={{ color: "#e6e600" }} />{" "}
+          </Button>
+        }
       >
         <Modal.Header>Vem sempre aqui?</Modal.Header>
         <Modal.Content image>
@@ -71,17 +76,17 @@ export default class shopModal extends Component {
 
               <Form.Field>
                 <label>E sua raridade</label>
-                <select onChange={(e) => this.setState({ raridade: e.target.value })}>
-                <option value ="">Selecione a raridade!</option>
-                  <option value ="comum">Comum</option>
-                  <option value ="incomum">Incomum</option>
-                  <option value ="raro">Raro</option>
-                  <option value ="epico">Épico</option>
-                  <option value ="lendario">Lendario!!</option>
-                  
+                <select
+                  onChange={(e) => this.setState({ raridade: e.target.value })}
+                >
+                  <option value="">Selecione a raridade!</option>
+                  <option value="comum">Comum</option>
+                  <option value="incomum">Incomum</option>
+                  <option value="raro">Raro</option>
+                  <option value="epico">Épico</option>
+                  <option value="lendario">Lendario!!</option>
                 </select>
               </Form.Field>
-
               <Button color="teal" fluid type="submit">
                 Bora!
               </Button>

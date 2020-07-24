@@ -7,7 +7,7 @@ import ShopModal from '../MainPageComponents/shopModal';
 function GroupCard(props) {
   return (
     <>
-      <div className="all">
+    
         <div className="card">
           <div className="card-imagegroup "></div>
           <div className="card-text">
@@ -30,8 +30,7 @@ function GroupCard(props) {
             </div>
           </div>
         </div>
-      </div>
-    </>
+        </>
   );
 }
 

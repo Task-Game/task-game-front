@@ -2,6 +2,24 @@ import React, { Component } from "react";
 import { Button, Header, Image, Modal, Form } from "semantic-ui-react";
 import tarefagirl from "../imagens/criartarefa.jpg";
 import User from "../routes/auth";
+import api from '../routes/api';
+
+function changeRaridade(raridade){
+  switch (raridade) {
+    case "comum":
+      return 0;
+    case "incomum":
+      return 1;    
+    case "raro":
+      return 2;      
+    case "epico":
+      return 3;    
+    case "lendario":
+      return 4;     
+    default:
+      break;
+  }
+}
 
 export default class shopModal extends Component {
   //importação do contexto da aplicação, ou o token do usuario que pode ser requirido em todas as partes do app
@@ -13,8 +31,8 @@ export default class shopModal extends Component {
       novoItem: {
         nome: "",
         descricao: "",
-        valor: "",
-        raridade: "",
+        recompensa: "",
+        Raridade_idRaridadee:"",
         prazo: "",
       },
     };
@@ -24,13 +42,21 @@ export default class shopModal extends Component {
     ////mesmo esquema do createGroup, a parte de cima também
     e.preventDefault();
     const { nome, descricao, valor, raridade, prazo } = this.state;
+    this.state.raridade = changeRaridade(this.state.raridade)
     if (!nome || !descricao || !valor || !raridade || !prazo) {
       alert("Deu ruim");
       console.log(this.state);
     } else {
-      alert("Ta dando certo");
-      console.log(this.state);
-      console.log(this.context);
+      
+      alert("Tarefa criada! verique-a ela na aba 'Tarefas' ");
+
+      api.post('task/api/v1/task', this.state, {
+        header: {
+            "Access-Control-Allow-Origin": "*",
+        }
+      })
+      console.log(this.state);    
+     console.log(this.context);
     }
   };
 
@@ -70,11 +96,15 @@ export default class shopModal extends Component {
 
               <Form.Field>
                 <label>Quanto ele vale</label>
-                <input
-                  type="text"
-                  placeholder="200"
-                  onChange={(e) => this.setState({ valor: e.target.value })}
-                />
+                <select onChange={(e) => this.setState({ raridade: e.target.value })}>
+                <option value ="">Selecione a frequência!</option>
+                  <option value ="diario">Diario</option>
+                  <option value ="semanal">Semanal</option>
+                  <option value ="quinzenal">Quinzenal</option>
+                  <option value ="mensal">Mensal</option>
+                  <option value ="none">Uma vez</option>
+                  
+                </select>
               </Form.Field>
 
               <Form.Field>

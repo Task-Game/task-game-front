@@ -2,35 +2,55 @@ import React, { Component } from "react";
 import { Button, Header, Image, Modal, Form } from "semantic-ui-react";
 import image from "../imagens/cadastro-image.jpg";
 import api from "../routes/api";
-import axios from "axios";
-
+import mainPage from '../mainPage'
+import MainPage from "../mainPage";
+import axios from 'axios'
 class Cadastro extends Component {
-  //cria o estado do componente, ou sua variaveis que serão funcionais 
+  //cria o estado do componente, ou sua variaveis que serão funcionais
   constructor() {
     super();
     this.state = {
-      novoUsuario: {
+      data: {
         nome: "",
         email: "",
+        cargo: "",
         senha: "",
-        empresa: "",
-        dataNascimento: "",
       },
     };
   }
   /*Função que pega os imputs do usuario e manda para a api */
+  
 
   handleSignUp = (e) => {
     e.preventDefault();
-    const { nome, email, empresa, dataNascimento, senha } = this.state;
-    if (!nome || !email || !senha || !dataNascimento || !empresa) {
+    const { nome, email, cargo, senha } = this.state;
+    if (!nome || !email || !senha || !cargo) {
       alert("Deu ruim");
     } else {
-      alert("Ta dando certo");
+      alert("Você foi cadastrado! Por favor atualize a pagina");
       console.log(this.state);
-      api.post("login", this.state);
+      axios.post("http://127.0.0.1:5000/user/api/v1/user", this.state, 
+      { method: 'post', mode: 'no-cors' ,
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "*",
+        "Access-Control-Allow-Headers": "*"
+      }}, ); 
+    
     }
   };
+
+    /*   
+            const requestOptions = {
+        method: 'POST',
+        headers: {"Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "*",
+        "Access-Control-Allow-Headers": "*"},
+         mode: 'cors' 
+  
+    };
+    fetch('http://127.0.0.1:5000/api/v1/user', requestOptions, {body: JSON.stringify(this.state)})
+      */
 
   render() {
     return (
@@ -60,29 +80,18 @@ class Cadastro extends Component {
               <Form.Field>
                 <label>Insira seu Email!</label>
                 <input
-                  type="email"
+                  type="text"
                   placeholder="tcctaskgame@gmail.com"
                   onChange={(e) => this.setState({ email: e.target.value })}
                 />
               </Form.Field>
 
               <Form.Field>
-                <label>Qual empresa você trabalha</label>
+                <label>Qual o seu atual cargo?</label>
                 <input
                   type="text"
-                  placeholder="TaskGame Etecia"
-                  onChange={(e) => this.setState({ empresa: e.target.value })}
-                />
-              </Form.Field>
-
-              <Form.Field>
-                <label>Data de Nascimento</label>
-                <input
-                  type="date"
-                  placeholder="00/00/0000"
-                  onChange={(e) =>
-                    this.setState({ dataNascimento: e.target.value })
-                  }
+                  placeholder="Desenvolvedor"
+                  onChange={(e) => this.setState({ cargo: e.target.value })}
                 />
               </Form.Field>
 
@@ -94,8 +103,7 @@ class Cadastro extends Component {
                   onChange={(e) => this.setState({ senha: e.target.value })}
                 />
               </Form.Field>
-
-              <Button color="teal" fluid type="submit">
+              <Button color="teal" fluid type="submit">     
                 Bora!
               </Button>
             </Form>

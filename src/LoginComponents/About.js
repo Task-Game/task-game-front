@@ -5,7 +5,7 @@ export default class MenuExampleBasic extends Component {
     return (
       <div className="ui message violet" id="container">
         <div className="header"> Mais sobre o TaskGame</div>
-        <p>Coisas legais sobre o TaskGame</p>
+        <p>Crie grupos, tarefas e ganhe recompensas por concluí-las!</p>
       </div>
     );
   }

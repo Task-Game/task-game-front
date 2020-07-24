@@ -23,7 +23,7 @@ export default class shopModal extends Component {
       console.log(this.state);
       //post
     } else {
-      alert("Ta dando certo");
+      alert("Grupo encontrado! se divirta");
       console.log(this.state);
     }
   };

@@ -1,23 +1,33 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../css/mainPage/card.css";
 import { Button} from "semantic-ui-react";
+import CheckList from './checklistModal';
+import api from '../routes/api';
+import User from "../routes/auth";
+
+
+
 
 const Card = (props) => {
+  const UserId = useContext(User);
+
   //função chamada ao concluir a tarefa
-  function concluirTarefa() {
-    //post perfilprice = perfilprice +  price
-    //delete tarefa
+  function concluirTarefa(recompensa,IDTarefa, UserID) {
+    api.patch(`api/v1/user/${UserID}`, {data: {credito: recompensa}})
+    console.log(recompensa)
+
+    //patch idcredito = idcredito + tarefa_recompensa
+    //tarefa = true
     alert("Meus parabens! foi adicionado " + props.price + "g a sua conta");
   }
   function comprarItem() {
-    //post perfilprice = perfilprice -  price
-    //delete tarefa
+    //patch perfilprice = perfilprice - preco
     alert(`Meus parabens! foi adicionado "` + props.title + `" a sua conta`);
   }
 
   function cardType(cardType) {
-    if (cardType == "tarefa") return concluirTarefa();
-    else if (cardType == "shop") return comprarItem();
+    if (cardType === "tarefa") return concluirTarefa(props.price, props.key, UserId);
+    else if (cardType === "shop") return comprarItem();
   }
 
   function cardImage(backgroundImages) {
@@ -29,6 +39,13 @@ const Card = (props) => {
       backgroundSize: "cover",
     };
   }
+  function setRarityName(raridade){
+    if(raridade === 1) return "Comum"   
+    else if(raridade === 2) return "Incomum"
+    else if(raridade === 3) return "Raro"
+    else if(raridade === 4) return "Épico!"
+    else if(raridade === 5) return "Lendário!!"
+  }
 
   return (
     <>
@@ -38,22 +55,22 @@ const Card = (props) => {
           <span className="date">{props.date}</span>
           <h2>{props.title}</h2>
           <p>{props.description}</p>
+          <CheckList
+          color = {props.color}
+          display ={props.display} />
         </div>
 
         <div className="card-stats" style={{ background: props.color }}>
           <div className="stat">
-            <div className="valor">{props.price}g</div>
-            <div className="type">{props.rarity}</div>
+            <div className="valor">{props.price}c</div>
+            <div className="type">{setRarityName(props.rarity)}</div>
           </div>
           <div className="stat">
             <div className="valor">Por</div>
             <div className="type">{props.name}</div>
           </div>
           <div className="stat">
-            <Button color='gray'  onClick={() => cardType(props.cardType)}>
-              
-             
-            
+            <Button onClick={() => cardType(props.cardType)}>           
               {props.buttomName}
             </Button>
           </div>

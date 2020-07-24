@@ -27,6 +27,7 @@ const TaskGame = () => {
           image = {ImageChest2}
           cardType =  "shop"
           buttomName = "Comprar!"
+          display  ="none"
         />
         </div>
       }
