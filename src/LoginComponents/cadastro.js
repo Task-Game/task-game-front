@@ -29,7 +29,7 @@ class Cadastro extends Component {
     } else {
       alert("Você foi cadastrado! Por favor atualize a pagina");
       console.log(this.state);
-      axios.post("http://127.0.0.1:5000/user/api/v1/user", this.state, 
+      axios.post("http://127.0.0.1:5000/user/api/v1/", this.state, 
       { method: 'post', mode: 'no-cors' ,
       headers: {
         "Access-Control-Allow-Origin": "*",

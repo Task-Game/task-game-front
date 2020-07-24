@@ -27,7 +27,7 @@ export default class shopModal extends Component {
     } else {
       alert("Item criada! verique-a ela na aba 'Loja' ");
       console.log(this.state);
-      api.post("/item/api/v1/item", this.state)
+      api.post("item/api/v1/", this.state)
     }
   };
 

@@ -31,7 +31,7 @@ export default class shopModal extends Component {
     } else {
       alert("Grupo criado com sucesso!");
       console.log(this.state);
-      api.post("group/api/v1/group", this.state,{idUsuario : this.context.token},  {
+      api.post("group/api/v1", this.state,{idUsuario : this.context.token},  {
         header: {
             "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Methods": "*",

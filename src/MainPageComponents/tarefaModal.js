@@ -36,7 +36,7 @@ export default class shopModal extends Component {
       this.state.idUsuario = this.context.token;
       alert("Tarefa criada! verique-a ela na aba 'Tarefas' ");
 
-      api.post('task/api/v1/task', this.state, {
+      api.post('task/api/v1/', this.state, {
         header: {
             "Access-Control-Allow-Origin": "*",
         }

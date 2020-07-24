@@ -36,7 +36,7 @@ const UserLogin = () => {
 
 
 useEffect(() => {
-  api.get("user/api/v1/user").then(response =>{  
+  api.get("user/api/v1/").then(response =>{  
     const use = response.data
     setUsers(use);
     console.log(use)

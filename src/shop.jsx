@@ -9,22 +9,23 @@ const TaskGame = () => {
 
   const [cards, setCards] = useState([]);
   const [groups, setGroups] = useState([]);
-
+  
   useEffect(() => {
-    api.get("item/api/v1/item").then((response) => {
+    api.get("group/api/v1").then((response) => {
+      const use = response.data.data;
+      setGroups(use);
+      console.log(use);
+    });
+  }, []);
+  useEffect(() => {
+    api.get("item/api/v1/").then((response) => {
       const use = response.data.data;
       setCards(use);
       console.log(use);
     });
   }, []);
 
-  useEffect(() => {
-    api.get("group/api/v1/group").then((response) => {
-      const use = response.data.data;
-      setGroups(use);
-      console.log(use);
-    });
-  }, []);
+
 
   return (
     <>
