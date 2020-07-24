@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState , useEffect } from "react";
 import "../css/mainPage/card.css";
 import { Button} from "semantic-ui-react";
 import CheckList from './checklistModal';
@@ -10,24 +10,36 @@ import User from "../routes/auth";
 
 const Card = (props) => {
   const UserId = useContext(User);
+  const [stats, setStats] = useState([]);
+
+  
+  useEffect(() => {
+    api.get(`user/api/v1/${UserId.token}`).then((response) => {
+      const use = response.data;
+      setStats(use);
+      console.log(use);
+     
+    });
+  }, []);
 
   //função chamada ao concluir a tarefa
-  function concluirTarefa(recompensa,IDTarefa, UserID) {
-    api.patch(`user/api/v1/${UserID}`, {data: {credito: recompensa}});
-    //api.delete(`/task/api/v1/task/${IDTarefa}`)
+  function concluirTarefa(recompensa,IDTarefa, UserID, UserCreditos) {
+    console.log(UserID)
+    api.patch(`user/api/v1/${UserID.token}`,  {"credito": recompensa + UserCreditos});
+    api.delete(`/task/api/v1/${IDTarefa}`)
     console.log(recompensa)
-
-    //patch idcredito = idcredito + tarefa_recompensa
     //tarefa = true
     alert("Meus parabens! foi adicionado " + props.price + "g a sua conta");
   }
-  function comprarItem() {
-    //patch perfilprice = perfilprice - preco
+
+
+  function comprarItem(recompensa, UserID, UserCreditos) {
+    api.patch(`user/api/v1/${UserID.token}`,  {"credito": recompensa - UserCreditos});
     alert(`Meus parabens! foi adicionado "` + props.title + `" a sua conta`);
   }
 
   function cardType(cardType) {
-    if (cardType === "tarefa") return concluirTarefa(props.price, props.id, UserId);
+    if (cardType === "tarefa") return concluirTarefa(props.price, props.id, UserId, stats.credito);
     else if (cardType === "shop") return comprarItem();
   }
 

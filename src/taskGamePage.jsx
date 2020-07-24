@@ -43,11 +43,11 @@ const Tarefas = () => {
     else if(raridade === 5) return legendaryCard
   }
   function definePrice(raridade){
-    if(raridade === 1) return "50"   
-    else if(raridade === 2) return "150"
-    else if(raridade === 3) return "500"
-    else if(raridade === 4) return "800"
-    else if(raridade === 5) return "1000"
+    if(raridade === 1) return 50  
+    else if(raridade === 2) return 150
+    else if(raridade === 3) return 500
+    else if(raridade === 4) return 800
+    else if(raridade === 5) return 1000
   }
 
   return (
